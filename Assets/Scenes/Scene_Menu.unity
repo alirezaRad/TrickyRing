@@ -573,6 +573,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShopPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 7399853832703198800, guid: 1f8359f1dc2bbda4ab1cf6432118970f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -670,10 +674,114 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6321708624429072387, guid: f506764e106e4574eb3d7ae5e0fd2ddf, type: 3}
+    - target: {fileID: 4868441582258172024, guid: f506764e106e4574eb3d7ae5e0fd2ddf, type: 3}
       propertyPath: onTabSelected
       value: 
-      objectReference: {fileID: 11400000, guid: 9a5580d30853fb049b2bcd0fcb16b4bf, type: 2}
+      objectReference: {fileID: 11400000, guid: 1afe7ff9358539344bcb334e932868b6, type: 2}
+    - target: {fileID: 4868441582258172024, guid: f506764e106e4574eb3d7ae5e0fd2ddf, type: 3}
+      propertyPath: activeButtonSprite
+      value: 
+      objectReference: {fileID: 7175521830830924091, guid: 05c4ab935ae135a4aa251b81f3e4e26c, type: 3}
+    - target: {fileID: 4868441582258172024, guid: f506764e106e4574eb3d7ae5e0fd2ddf, type: 3}
+      propertyPath: activeButtonColor.b
+      value: 0.61960787
+      objectReference: {fileID: 0}
+    - target: {fileID: 4868441582258172024, guid: f506764e106e4574eb3d7ae5e0fd2ddf, type: 3}
+      propertyPath: activeButtonColor.g
+      value: 0.49411768
+      objectReference: {fileID: 0}
+    - target: {fileID: 4868441582258172024, guid: f506764e106e4574eb3d7ae5e0fd2ddf, type: 3}
+      propertyPath: activeButtonColor.r
+      value: 0.21568629
+      objectReference: {fileID: 0}
+    - target: {fileID: 4868441582258172024, guid: f506764e106e4574eb3d7ae5e0fd2ddf, type: 3}
+      propertyPath: inactiveButtonSprite
+      value: 
+      objectReference: {fileID: 7578648074948127697, guid: df535af0254144a4e97b7d2291861100, type: 3}
+    - target: {fileID: 4868441582258172024, guid: f506764e106e4574eb3d7ae5e0fd2ddf, type: 3}
+      propertyPath: inactiveButtonColor.b
+      value: 0.4431373
+      objectReference: {fileID: 0}
+    - target: {fileID: 4868441582258172024, guid: f506764e106e4574eb3d7ae5e0fd2ddf, type: 3}
+      propertyPath: inactiveButtonColor.g
+      value: 0.26666668
+      objectReference: {fileID: 0}
+    - target: {fileID: 4868441582258172024, guid: f506764e106e4574eb3d7ae5e0fd2ddf, type: 3}
+      propertyPath: inactiveButtonColor.r
+      value: 0.10980393
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634535822109170390, guid: f506764e106e4574eb3d7ae5e0fd2ddf, type: 3}
+      propertyPath: onTabSelected
+      value: 
+      objectReference: {fileID: 11400000, guid: 1afe7ff9358539344bcb334e932868b6, type: 2}
+    - target: {fileID: 6634535822109170390, guid: f506764e106e4574eb3d7ae5e0fd2ddf, type: 3}
+      propertyPath: activeButtonSprite
+      value: 
+      objectReference: {fileID: 7175521830830924091, guid: 05c4ab935ae135a4aa251b81f3e4e26c, type: 3}
+    - target: {fileID: 6634535822109170390, guid: f506764e106e4574eb3d7ae5e0fd2ddf, type: 3}
+      propertyPath: activeButtonColor.b
+      value: 0.61960787
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634535822109170390, guid: f506764e106e4574eb3d7ae5e0fd2ddf, type: 3}
+      propertyPath: activeButtonColor.g
+      value: 0.49411768
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634535822109170390, guid: f506764e106e4574eb3d7ae5e0fd2ddf, type: 3}
+      propertyPath: activeButtonColor.r
+      value: 0.21568629
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634535822109170390, guid: f506764e106e4574eb3d7ae5e0fd2ddf, type: 3}
+      propertyPath: inactiveButtonSprite
+      value: 
+      objectReference: {fileID: 7578648074948127697, guid: df535af0254144a4e97b7d2291861100, type: 3}
+    - target: {fileID: 6634535822109170390, guid: f506764e106e4574eb3d7ae5e0fd2ddf, type: 3}
+      propertyPath: inactiveButtonColor.b
+      value: 0.4431373
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634535822109170390, guid: f506764e106e4574eb3d7ae5e0fd2ddf, type: 3}
+      propertyPath: inactiveButtonColor.g
+      value: 0.26666668
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634535822109170390, guid: f506764e106e4574eb3d7ae5e0fd2ddf, type: 3}
+      propertyPath: inactiveButtonColor.r
+      value: 0.10980393
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954159535517163992, guid: f506764e106e4574eb3d7ae5e0fd2ddf, type: 3}
+      propertyPath: onTabSelected
+      value: 
+      objectReference: {fileID: 11400000, guid: 1afe7ff9358539344bcb334e932868b6, type: 2}
+    - target: {fileID: 6954159535517163992, guid: f506764e106e4574eb3d7ae5e0fd2ddf, type: 3}
+      propertyPath: activeButtonSprite
+      value: 
+      objectReference: {fileID: 7175521830830924091, guid: 05c4ab935ae135a4aa251b81f3e4e26c, type: 3}
+    - target: {fileID: 6954159535517163992, guid: f506764e106e4574eb3d7ae5e0fd2ddf, type: 3}
+      propertyPath: activeButtonColor.b
+      value: 0.61960787
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954159535517163992, guid: f506764e106e4574eb3d7ae5e0fd2ddf, type: 3}
+      propertyPath: activeButtonColor.g
+      value: 0.49411768
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954159535517163992, guid: f506764e106e4574eb3d7ae5e0fd2ddf, type: 3}
+      propertyPath: activeButtonColor.r
+      value: 0.21568629
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954159535517163992, guid: f506764e106e4574eb3d7ae5e0fd2ddf, type: 3}
+      propertyPath: inactiveButtonSprite
+      value: 
+      objectReference: {fileID: 7578648074948127697, guid: df535af0254144a4e97b7d2291861100, type: 3}
+    - target: {fileID: 6954159535517163992, guid: f506764e106e4574eb3d7ae5e0fd2ddf, type: 3}
+      propertyPath: inactiveButtonColor.b
+      value: 0.4431373
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954159535517163992, guid: f506764e106e4574eb3d7ae5e0fd2ddf, type: 3}
+      propertyPath: inactiveButtonColor.g
+      value: 0.26666668
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954159535517163992, guid: f506764e106e4574eb3d7ae5e0fd2ddf, type: 3}
+      propertyPath: inactiveButtonColor.r
+      value: 0.10980393
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -706,6 +814,10 @@ PrefabInstance:
     - target: {fileID: 1584356908118537005, guid: 72675503d05941e44a87038322da5a7b, type: 3}
       propertyPath: m_Name
       value: HomePanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 1584356908118537005, guid: 72675503d05941e44a87038322da5a7b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2056789726036502899, guid: 72675503d05941e44a87038322da5a7b, type: 3}
       propertyPath: m_AnchorMax.y
