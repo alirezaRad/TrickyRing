@@ -4,12 +4,14 @@ using TMPro;
 using DG.Tweening;
 using System;
 using System.Collections;
+using ScriptableObjects.GameEvents;
 using UnityEngine.SceneManagement;
 
 namespace UI
 {
     public class LoadingScreen : MonoBehaviour
     {
+        [SerializeField] private NullEvent OnEndAction;
         [Header("Main Root")]
         [SerializeField] private CanvasGroup rootGroup;
 
@@ -34,7 +36,7 @@ namespace UI
         {
             ShowLoadingBar(fillDuration, () =>
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                OnEndAction?.Raise();
             });
         }
 

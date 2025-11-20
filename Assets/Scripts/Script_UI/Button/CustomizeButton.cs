@@ -1,0 +1,43 @@
+using UnityEngine;
+using UnityEngine.EventSystems;
+namespace UI
+{
+    public class CustomizeButton : UnityEngine.UI.Button
+    {
+        [Header("Text Press Effect")]
+        private RectTransform buttonText;
+        private float pressOffsetY = -15f;
+
+        private Vector3 originalTextPos;
+
+        protected override void Start()
+        {
+            base.Start();
+            buttonText = transform.GetChild(0).GetComponent<RectTransform>();
+            if(buttonText != null)
+                originalTextPos = buttonText.localPosition;
+        }
+
+        public override void OnPointerDown(PointerEventData eventData)
+        {
+            base.OnPointerDown(eventData);
+            if(buttonText != null)
+                buttonText.localPosition = originalTextPos + new Vector3(0, pressOffsetY, 0);
+        }
+
+        public override void OnPointerUp(PointerEventData eventData)
+        {
+            base.OnPointerUp(eventData);
+            if(buttonText != null)
+                buttonText.localPosition = originalTextPos;
+        }
+
+        public override void OnPointerExit(PointerEventData eventData)
+        {
+            base.OnPointerExit(eventData);
+            if(buttonText != null)
+                buttonText.localPosition = originalTextPos;
+        }
+    }
+
+}

@@ -1,0 +1,17 @@
+using System;
+using TMPro;
+using UnityEngine;
+
+namespace UI
+{
+    public class HomePanel : MonoBehaviour
+    {
+        [SerializeField] private TextMeshProUGUI playerNameText;
+        [SerializeField] private TextMeshProUGUI playerHighScoreText;
+        private void Start()
+        {
+            playerNameText.text = PlayerPrefsSaveService.Main.LoadString("PlayerName","HoneyDrops");
+            playerHighScoreText.text = PlayerPrefsSaveService.Main.LoadInt("PlayerHighScore", 0).ToString();
+        }
+    }
+}

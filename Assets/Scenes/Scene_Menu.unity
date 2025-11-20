@@ -705,7 +705,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1584356908118537005, guid: 72675503d05941e44a87038322da5a7b, type: 3}
       propertyPath: m_Name
-      value: StartPanel
+      value: HomePanel
       objectReference: {fileID: 0}
     - target: {fileID: 2056789726036502899, guid: 72675503d05941e44a87038322da5a7b, type: 3}
       propertyPath: m_AnchorMax.y
