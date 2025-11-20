@@ -696,14 +696,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 669510542716161119, guid: 72675503d05941e44a87038322da5a7b, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 669510542716161119, guid: 72675503d05941e44a87038322da5a7b, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0.19818227
-      objectReference: {fileID: 0}
-    - target: {fileID: 669510542716161119, guid: 72675503d05941e44a87038322da5a7b, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
@@ -711,21 +703,9 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 669510542716161119, guid: 72675503d05941e44a87038322da5a7b, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0.26263428
-      objectReference: {fileID: 0}
-    - target: {fileID: 669510542716161119, guid: 72675503d05941e44a87038322da5a7b, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 134.08289
-      objectReference: {fileID: 0}
     - target: {fileID: 1584356908118537005, guid: 72675503d05941e44a87038322da5a7b, type: 3}
       propertyPath: m_Name
       value: StartPanel
-      objectReference: {fileID: 0}
-    - target: {fileID: 1936664898826013731, guid: 72675503d05941e44a87038322da5a7b, type: 3}
-      propertyPath: tab
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2056789726036502899, guid: 72675503d05941e44a87038322da5a7b, type: 3}
       propertyPath: m_AnchorMax.y
@@ -871,38 +851,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7039576471504191278, guid: 72675503d05941e44a87038322da5a7b, type: 3}
-      propertyPath: m_Pivot.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7039576471504191278, guid: 72675503d05941e44a87038322da5a7b, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7039576471504191278, guid: 72675503d05941e44a87038322da5a7b, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7039576471504191278, guid: 72675503d05941e44a87038322da5a7b, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7039576471504191278, guid: 72675503d05941e44a87038322da5a7b, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 400
-      objectReference: {fileID: 0}
-    - target: {fileID: 7039576471504191278, guid: 72675503d05941e44a87038322da5a7b, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 225
-      objectReference: {fileID: 0}
-    - target: {fileID: 7039576471504191278, guid: 72675503d05941e44a87038322da5a7b, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7039576471504191278, guid: 72675503d05941e44a87038322da5a7b, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 150
-      objectReference: {fileID: 0}
     - target: {fileID: 8168750553086592557, guid: 72675503d05941e44a87038322da5a7b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -927,6 +875,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -0
       objectReference: {fileID: 0}
+    - target: {fileID: 8766278257900702579, guid: 72675503d05941e44a87038322da5a7b, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8766278257900702579, guid: 72675503d05941e44a87038322da5a7b, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -940,6 +896,78 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1539332799}
     m_Modifications:
+    - target: {fileID: 519503209340600390, guid: 4936a256c17894446b9873450b483afe, type: 3}
+      propertyPath: activeButtonColor.b
+      value: 0.74509805
+      objectReference: {fileID: 0}
+    - target: {fileID: 519503209340600390, guid: 4936a256c17894446b9873450b483afe, type: 3}
+      propertyPath: activeButtonColor.g
+      value: 0.49411765
+      objectReference: {fileID: 0}
+    - target: {fileID: 519503209340600390, guid: 4936a256c17894446b9873450b483afe, type: 3}
+      propertyPath: activeButtonColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 519503209340600390, guid: 4936a256c17894446b9873450b483afe, type: 3}
+      propertyPath: inactiveIconColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 519503209340600390, guid: 4936a256c17894446b9873450b483afe, type: 3}
+      propertyPath: inactiveIconColor.g
+      value: 0.78823537
+      objectReference: {fileID: 0}
+    - target: {fileID: 519503209340600390, guid: 4936a256c17894446b9873450b483afe, type: 3}
+      propertyPath: inactiveIconColor.r
+      value: 0.37254903
+      objectReference: {fileID: 0}
+    - target: {fileID: 519503209340600390, guid: 4936a256c17894446b9873450b483afe, type: 3}
+      propertyPath: inactiveButtonColor.b
+      value: 0.4431373
+      objectReference: {fileID: 0}
+    - target: {fileID: 519503209340600390, guid: 4936a256c17894446b9873450b483afe, type: 3}
+      propertyPath: inactiveButtonColor.g
+      value: 0.27058825
+      objectReference: {fileID: 0}
+    - target: {fileID: 519503209340600390, guid: 4936a256c17894446b9873450b483afe, type: 3}
+      propertyPath: inactiveButtonColor.r
+      value: 0.10980393
+      objectReference: {fileID: 0}
+    - target: {fileID: 1238433643156787102, guid: 4936a256c17894446b9873450b483afe, type: 3}
+      propertyPath: activeButtonColor.b
+      value: 0.74509805
+      objectReference: {fileID: 0}
+    - target: {fileID: 1238433643156787102, guid: 4936a256c17894446b9873450b483afe, type: 3}
+      propertyPath: activeButtonColor.g
+      value: 0.49411765
+      objectReference: {fileID: 0}
+    - target: {fileID: 1238433643156787102, guid: 4936a256c17894446b9873450b483afe, type: 3}
+      propertyPath: activeButtonColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1238433643156787102, guid: 4936a256c17894446b9873450b483afe, type: 3}
+      propertyPath: inactiveIconColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1238433643156787102, guid: 4936a256c17894446b9873450b483afe, type: 3}
+      propertyPath: inactiveIconColor.g
+      value: 0.78823537
+      objectReference: {fileID: 0}
+    - target: {fileID: 1238433643156787102, guid: 4936a256c17894446b9873450b483afe, type: 3}
+      propertyPath: inactiveIconColor.r
+      value: 0.37254903
+      objectReference: {fileID: 0}
+    - target: {fileID: 1238433643156787102, guid: 4936a256c17894446b9873450b483afe, type: 3}
+      propertyPath: inactiveButtonColor.b
+      value: 0.4431373
+      objectReference: {fileID: 0}
+    - target: {fileID: 1238433643156787102, guid: 4936a256c17894446b9873450b483afe, type: 3}
+      propertyPath: inactiveButtonColor.g
+      value: 0.27058825
+      objectReference: {fileID: 0}
+    - target: {fileID: 1238433643156787102, guid: 4936a256c17894446b9873450b483afe, type: 3}
+      propertyPath: inactiveButtonColor.r
+      value: 0.10980393
+      objectReference: {fileID: 0}
     - target: {fileID: 2764032356792341558, guid: 4936a256c17894446b9873450b483afe, type: 3}
       propertyPath: m_Name
       value: TabPanel
@@ -1023,6 +1051,42 @@ PrefabInstance:
     - target: {fileID: 5687337530833356144, guid: 4936a256c17894446b9873450b483afe, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7877907696732439089, guid: 4936a256c17894446b9873450b483afe, type: 3}
+      propertyPath: activeButtonColor.b
+      value: 0.74509805
+      objectReference: {fileID: 0}
+    - target: {fileID: 7877907696732439089, guid: 4936a256c17894446b9873450b483afe, type: 3}
+      propertyPath: activeButtonColor.g
+      value: 0.49411765
+      objectReference: {fileID: 0}
+    - target: {fileID: 7877907696732439089, guid: 4936a256c17894446b9873450b483afe, type: 3}
+      propertyPath: activeButtonColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7877907696732439089, guid: 4936a256c17894446b9873450b483afe, type: 3}
+      propertyPath: inactiveIconColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7877907696732439089, guid: 4936a256c17894446b9873450b483afe, type: 3}
+      propertyPath: inactiveIconColor.g
+      value: 0.78823537
+      objectReference: {fileID: 0}
+    - target: {fileID: 7877907696732439089, guid: 4936a256c17894446b9873450b483afe, type: 3}
+      propertyPath: inactiveIconColor.r
+      value: 0.37254903
+      objectReference: {fileID: 0}
+    - target: {fileID: 7877907696732439089, guid: 4936a256c17894446b9873450b483afe, type: 3}
+      propertyPath: inactiveButtonColor.b
+      value: 0.4431373
+      objectReference: {fileID: 0}
+    - target: {fileID: 7877907696732439089, guid: 4936a256c17894446b9873450b483afe, type: 3}
+      propertyPath: inactiveButtonColor.g
+      value: 0.27058825
+      objectReference: {fileID: 0}
+    - target: {fileID: 7877907696732439089, guid: 4936a256c17894446b9873450b483afe, type: 3}
+      propertyPath: inactiveButtonColor.r
+      value: 0.10980393
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

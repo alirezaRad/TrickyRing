@@ -55,6 +55,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5687337530833356144}
     m_Modifications:
+    - target: {fileID: 548931042039776826, guid: fd795c09e0fead844b2129ca1ffde0f6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 548931042039776826, guid: fd795c09e0fead844b2129ca1ffde0f6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 1094772985137429455, guid: fd795c09e0fead844b2129ca1ffde0f6, type: 3}
       propertyPath: m_Transition
       value: 0
@@ -228,6 +236,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2571583127136382459, guid: d6ead5e6b4c7e4646b253f37b0bc4bef, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571583127136382459, guid: d6ead5e6b4c7e4646b253f37b0bc4bef, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 3109912278843420159, guid: d6ead5e6b4c7e4646b253f37b0bc4bef, type: 3}
       propertyPath: m_Name
       value: TabButtonShop
@@ -396,6 +412,14 @@ PrefabInstance:
     - target: {fileID: 2726810180047290666, guid: 636e5cdbaea057e4b8a60b5d99e96f1c, type: 3}
       propertyPath: m_Name
       value: TabButtonLeaderBourd
+      objectReference: {fileID: 0}
+    - target: {fileID: 5128417952552929050, guid: 636e5cdbaea057e4b8a60b5d99e96f1c, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 5128417952552929050, guid: 636e5cdbaea057e4b8a60b5d99e96f1c, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 5891401760396745573, guid: 636e5cdbaea057e4b8a60b5d99e96f1c, type: 3}
       propertyPath: m_Name

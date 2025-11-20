@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using DG.Tweening;
 using Enums;
 using ScriptableObjects.GameEvents;
+using UnityEngine.Serialization;
 
 namespace UI
 {
@@ -19,13 +20,18 @@ namespace UI
         [SerializeField] private float scaleDuration = 0.2f;
         [SerializeField] private float activeScale = 1.2f;
         [SerializeField] private float inactiveScale = 1f;
-        [SerializeField] private Color activeColor = Color.white;
-        [SerializeField] private Color inactiveColor = Color.gray;
-
+        [SerializeField] private Color activeIconColor = Color.white;
+        [SerializeField] private Color activeButtonColor = Color.white;
+        [SerializeField] private Color inactiveButtonColor = Color.white;
+        [SerializeField] private Color inactiveIconColor = Color.gray;
+        private Image buttonImage;
         private void Awake()
         {
             if (button)
+            {
                 button.onClick.AddListener(OnClick);
+                buttonImage = button.GetComponent<Image>();
+            }
         }
 
         private void OnEnable()
@@ -58,11 +64,11 @@ namespace UI
         {
             transform.DOKill();
             transform.DOScale(isActive ? activeScale : inactiveScale, scaleDuration);
-            
+            buttonImage.DOColor(isActive ? activeButtonColor : inactiveButtonColor, scaleDuration);
             if (icon != null)
             {
                 icon.DOKill();
-                icon.DOColor(isActive ? activeColor : inactiveColor, scaleDuration);
+                icon.DOColor(isActive ? activeIconColor : inactiveIconColor, scaleDuration);
             }
         }
     }
