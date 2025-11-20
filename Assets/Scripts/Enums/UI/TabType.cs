@@ -2,8 +2,8 @@ namespace Enums
 {
     public enum TabType
     {
-        Game = 0,
-        Shop = 1,
+        Shop = 0,
+        Game = 1,
         LeaderBoard = 2
     }
 }

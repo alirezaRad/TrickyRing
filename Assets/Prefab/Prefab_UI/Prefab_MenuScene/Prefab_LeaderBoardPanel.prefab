@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tab: 2
-  onTabSelected: {fileID: 11400000, guid: 9a5580d30853fb049b2bcd0fcb16b4bf, type: 2}
+  onTabSelected: {fileID: 11400000, guid: bee2c87e6c7c44a4f91dbb39a102033a, type: 2}
   animDuration: 0.4
   offscreenX: 1080
 --- !u!1 &9090973568438024436

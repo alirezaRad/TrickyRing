@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8567019128a241b9bdba81123742567e, type: 3}
   m_Name: ScriptableObject_Panel_Sequence
   m_EditorClassIdentifier: 
-  sequence: 010000000000000002000000
+  sequence: 000000000100000002000000

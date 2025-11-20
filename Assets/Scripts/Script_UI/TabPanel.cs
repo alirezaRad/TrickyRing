@@ -17,16 +17,17 @@ namespace UI
         public float offscreenX = 1080f;
 
         private RectTransform rect;
-        private static int activeIndex = 1; // default center
+        private static int activeIndex = 0; 
 
-        private Vector2 originalPos; // store the anchored position
+        private Vector2 originalPos;
 
         void Awake()
         {
             rect = GetComponent<RectTransform>();
             panelSequence = PanelSequence.Main;
+            activeIndex = (int)panelSequence.firstActiveTab;
 
-            originalPos = rect.anchoredPosition; // save original anchored position
+            originalPos = rect.anchoredPosition;
         }
 
         void OnEnable()
@@ -41,7 +42,7 @@ namespace UI
 
         void Start()
         {
-            UpdatePosition(activeIndex, instant: true);
+            onTabSelected.Raise(activeIndex);
         }
 
         private void HandleTabSelected(int selectedIndex)
@@ -64,7 +65,7 @@ namespace UI
 
             rect.DOKill();
             if (instant)
-                rect.anchoredPosition = targetPos; // set instantly for Start()
+                rect.anchoredPosition = targetPos;
             else
                 rect.DOAnchorPos(targetPos, animDuration).SetEase(Ease.OutCubic);
         }

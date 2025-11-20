@@ -10,5 +10,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3af6ef89fc074dd4b2088e8cfd8c07a1, type: 3}
-  m_Name: GamePanelShowEvent
+  m_Name: PanelShowEvent
   m_EditorClassIdentifier: 

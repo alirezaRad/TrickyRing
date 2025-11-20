@@ -9,11 +9,12 @@ namespace Script_ScriptableObjects.UIConfigs
     {
         public TabType[] sequence;
 
-        public static PanelSequence Main; // static reference
+        public static PanelSequence Main; 
+        public TabType firstActiveTab;
 
         private void OnEnable()
         {
-            Main = this; // the first enabled instance becomes the main
+            Main = this;
         }
     }
 
