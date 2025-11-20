@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5687337530833356144}
   - component: {fileID: 230975828965513662}
+  - component: {fileID: 1037767061075010276}
+  - component: {fileID: 371075254054874716}
   m_Layer: 5
   m_Name: Prefab_TabPanel
   m_TagString: Untagged
@@ -47,6 +49,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2764032356792341558}
   m_CullTransparentMesh: 1
+--- !u!225 &1037767061075010276
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2764032356792341558}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &371075254054874716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2764032356792341558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 784f8ddf1e424a30a28aadb73c82cf7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetPanel: {fileID: 5687337530833356144}
+  moveDuration: 0.4
+  moveOffsetY: -250
 --- !u!1001 &8028111671255502534
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -191,8 +220,10 @@ MonoBehaviour:
   scaleDuration: 0.15
   activeScale: 1.1
   inactiveScale: 1
-  activeColor: {r: 1, g: 1, b: 1, a: 1}
-  inactiveColor: {r: 0.37254903, g: 0.78823537, b: 1, a: 1}
+  activeIconColor: {r: 1, g: 1, b: 1, a: 1}
+  activeButtonColor: {r: 0, g: 0.49411765, b: 0.74509805, a: 1}
+  inactiveButtonColor: {r: 0.10980393, g: 0.27058825, b: 0.4431373, a: 1}
+  inactiveIconColor: {r: 0.37254903, g: 0.78823537, b: 1, a: 1}
 --- !u!114 &6942579465039213833 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1094772985137429455, guid: fd795c09e0fead844b2129ca1ffde0f6, type: 3}
@@ -391,8 +422,10 @@ MonoBehaviour:
   scaleDuration: 0.15
   activeScale: 1.1
   inactiveScale: 1
-  activeColor: {r: 1, g: 1, b: 1, a: 1}
-  inactiveColor: {r: 0.37254903, g: 0.78823537, b: 1, a: 1}
+  activeIconColor: {r: 1, g: 1, b: 1, a: 1}
+  activeButtonColor: {r: 0, g: 0.49411765, b: 0.74509805, a: 1}
+  inactiveButtonColor: {r: 0.10980393, g: 0.27058825, b: 0.4431373, a: 1}
+  inactiveIconColor: {r: 0.37254903, g: 0.78823537, b: 1, a: 1}
 --- !u!1001 &8711423542700751978
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -553,8 +586,10 @@ MonoBehaviour:
   scaleDuration: 0.15
   activeScale: 1.1
   inactiveScale: 1
-  activeColor: {r: 1, g: 1, b: 1, a: 1}
-  inactiveColor: {r: 0.37254903, g: 0.78823537, b: 1, a: 1}
+  activeIconColor: {r: 1, g: 1, b: 1, a: 1}
+  activeButtonColor: {r: 0, g: 0.49411765, b: 0.74509805, a: 1}
+  inactiveButtonColor: {r: 0.10980393, g: 0.27058825, b: 0.4431373, a: 1}
+  inactiveIconColor: {r: 0.37254903, g: 0.78823537, b: 1, a: 1}
 --- !u!114 &8064611534591837950 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1661389527236377236, guid: 636e5cdbaea057e4b8a60b5d99e96f1c, type: 3}

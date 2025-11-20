@@ -91,6 +91,7 @@ GameObject:
   - component: {fileID: 1718331862752754292}
   - component: {fileID: 3742130516976940104}
   - component: {fileID: 1936664898826013731}
+  - component: {fileID: 732363543816078724}
   m_Layer: 5
   m_Name: Prefab_StartPanel
   m_TagString: Untagged
@@ -174,6 +175,25 @@ MonoBehaviour:
   onTabSelected: {fileID: 11400000, guid: 9a5580d30853fb049b2bcd0fcb16b4bf, type: 2}
   animDuration: 0.4
   swipeThreshold: 50
+--- !u!114 &732363543816078724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584356908118537005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05f11377303d4bc8b898d29962ee9dbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerName: {fileID: 8766278257900702579}
+  gameName: {fileID: 669510542716161119}
+  startButton: {fileID: 7039576471504191278}
+  moveDistance: 800
+  moveDuration: 1
+  scaleDuration: 1
+  flipRotation: -90
 --- !u!1 &2285429793465393963
 GameObject:
   m_ObjectHideFlags: 0
