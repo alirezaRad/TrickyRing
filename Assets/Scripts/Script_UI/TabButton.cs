@@ -8,19 +8,19 @@ namespace UI
 {
     public class TabButton : MonoBehaviour
     {
-        public TabType tab;     
-        public IntEvent onTabSelected;      
+        [SerializeField] private TabType tab;     
+        [SerializeField] private IntEvent onTabSelected;      
 
         [Header("Button References")]
-        public Button button;
-        public Image icon;       
+        [SerializeField] private Button button;
+        [SerializeField] private Image icon;       
 
         [Header("Animation Settings")]
-        public float scaleDuration = 0.2f;
-        public float activeScale = 1.2f;
-        public float inactiveScale = 1f;
-        public Color activeColor = Color.white;
-        public Color inactiveColor = Color.gray;
+        [SerializeField] private float scaleDuration = 0.2f;
+        [SerializeField] private float activeScale = 1.2f;
+        [SerializeField] private float inactiveScale = 1f;
+        [SerializeField] private Color activeColor = Color.white;
+        [SerializeField] private Color inactiveColor = Color.gray;
 
         private void Awake()
         {

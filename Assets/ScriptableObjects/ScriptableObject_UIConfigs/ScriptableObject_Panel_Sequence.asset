@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: ScriptableObject_Panel_Sequence
   m_EditorClassIdentifier: 
   sequence: 000000000100000002000000
+  firstActiveTab: 1

@@ -3,19 +3,49 @@ using DG.Tweening;
 using Enums;
 using Script_ScriptableObjects.UIConfigs;
 using ScriptableObjects.GameEvents;
+using UnityEngine.EventSystems;
 
 namespace UI
 {
-    public class TabPanel : MonoBehaviour
+    public class TabPanel : MonoBehaviour, IDragHandler, IEndDragHandler
     {
-        public TabType tab;
-        public IntEvent onTabSelected;
-        private PanelSequence panelSequence;
+        [SerializeField] private TabType tab;
+        [SerializeField] private IntEvent onTabSelected;
 
         [Header("Animation")]
-        public float animDuration = 0.4f;
-        public float offscreenX = 1080f;
+        [SerializeField] private float animDuration = 0.4f;
+        
+        [Header("Swipe Settings")]
+        [SerializeField] private float swipeThreshold = 50f;
 
+        private PanelSequence panelSequence;
+        private float offscreenX;
+
+        public void OnEndDrag(PointerEventData eventData)
+        {
+            float deltaX = eventData.pressPosition.x - eventData.position.x;
+
+            if (Mathf.Abs(deltaX) < swipeThreshold)
+                return;
+
+            if (deltaX > 0)
+                SwipeLeft();
+            else
+                SwipeRight();
+        }
+
+        private void SwipeLeft()
+        {
+            activeIndex = Mathf.Min(activeIndex + 1, panelSequence.sequence.Length - 1);
+            onTabSelected.Raise(activeIndex);
+        }
+
+        private void SwipeRight()
+        {
+            activeIndex = Mathf.Max(activeIndex - 1, 0);
+            onTabSelected.Raise(activeIndex);
+        }
+        
         private RectTransform rect;
         private static int activeIndex = 0; 
 
@@ -28,6 +58,7 @@ namespace UI
             activeIndex = (int)panelSequence.firstActiveTab;
 
             originalPos = rect.anchoredPosition;
+            offscreenX = Screen.width;
         }
 
         void OnEnable()
@@ -68,6 +99,10 @@ namespace UI
                 rect.anchoredPosition = targetPos;
             else
                 rect.DOAnchorPos(targetPos, animDuration).SetEase(Ease.OutCubic);
+        }
+
+        public void OnDrag(PointerEventData eventData)
+        {
         }
     }
 }
