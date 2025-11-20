@@ -172,7 +172,7 @@ MonoBehaviour:
   tab: 0
   onTabSelected: {fileID: 11400000, guid: 9a5580d30853fb049b2bcd0fcb16b4bf, type: 2}
   animDuration: 0.4
-  offscreenX: 1080
+  swipeThreshold: 50
 --- !u!1 &2285429793465393963
 GameObject:
   m_ObjectHideFlags: 0
@@ -509,10 +509,10 @@ RectTransform:
   - {fileID: 4490941115751216743}
   m_Father: {fileID: 5119794693625219189}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.20300001}
+  m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0.20300001}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 400, y: 225}
+  m_AnchoredPosition: {x: 0.535058, y: 148.55202}
+  m_SizeDelta: {x: 401.07025, y: -72.10402}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7296556683174341184
 CanvasRenderer:
@@ -631,8 +631,8 @@ RectTransform:
   m_Father: {fileID: 5119794693625219189}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 217.47772}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0.26263523, y: -148.41711}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7035947620816281756
