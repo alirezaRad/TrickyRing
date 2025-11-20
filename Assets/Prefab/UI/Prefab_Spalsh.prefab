@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2561590553785783002}
   - component: {fileID: 5362713127243264197}
   m_Layer: 5
-  m_Name: Spalsh
+  m_Name: Prefab_Spalsh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
