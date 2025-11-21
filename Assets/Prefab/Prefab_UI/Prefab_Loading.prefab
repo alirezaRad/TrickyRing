@@ -202,6 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db2ce9907bc443828cb256ae34969977, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnEndAction: {fileID: 0}
   rootGroup: {fileID: 7782677022406282682}
   topPart: {fileID: 0}
   bottomPart: {fileID: 0}

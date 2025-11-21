@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
+
 public class ObstacleManager : MonoBehaviour
 {
     public IntEvent OnScoreChanged;
@@ -20,9 +21,10 @@ public class ObstacleManager : MonoBehaviour
     public float spawnAnimationTime = 0.2f;
     public float removeAnimTime = 0.25f;
 
+    public float minDistanceBetweenObjects = 0.5f;
+
     List<GameObject> obstacles = new List<GameObject>();
     GameObject currentScoreItem;
-
 
     void Start()
     {
@@ -30,7 +32,6 @@ public class ObstacleManager : MonoBehaviour
             SpawnNewObstacle();
         RefreshScoreItem();
     }
-
 
     void OnEnable()
     {
@@ -41,7 +42,6 @@ public class ObstacleManager : MonoBehaviour
     {
         OnScoreChanged.OnEventRaised -= OnScoreEvent;
     }
-
 
     void OnScoreEvent(int score)
     {
@@ -56,7 +56,6 @@ public class ObstacleManager : MonoBehaviour
         RefreshObstacles();
         RefreshScoreItem();
     }
-
 
     void RefreshObstacles()
     {
@@ -80,53 +79,28 @@ public class ObstacleManager : MonoBehaviour
             SpawnNewObstacle();
     }
 
-
     void SpawnNewObstacle()
     {
-        bool inside = Random.value > 0.5f;
-        float radius = inside ? insideRadius : outsideRadius;
-
-        float angle = Random.Range(0f, 360f);
-        float rad = angle * Mathf.Deg2Rad;
-
-        Vector3 pos = center.position + new Vector3(Mathf.Cos(rad), Mathf.Sin(rad), 0) * radius;
-
+        Vector3 pos = GetValidSpawnPosition();
         GameObject ob = Instantiate(obstaclePrefab, pos, Quaternion.identity);
         obstacles.Add(ob);
 
         var firstScale = ob.transform.localScale;
         ob.transform.localScale = Vector3.zero;
-
         ob.transform.up = (pos - center.position).normalized;
-
         ob.transform.DOScale(firstScale, spawnAnimationTime).SetEase(Ease.OutBack);
     }
-
 
     void RefreshScoreItem()
     {
         if (currentScoreItem != null)
             RemoveScoreItem(currentScoreItem);
 
-        SpawnScoreItem();
-    }
-
-
-    void SpawnScoreItem()
-    {
-        bool inside = Random.value > 0.5f;
-        float radius = inside ? insideRadius : outsideRadius;
-
-        float angle = Random.Range(0f, 360f);
-        float rad = angle * Mathf.Deg2Rad;
-
-        Vector3 pos = center.position + new Vector3(Mathf.Cos(rad), Mathf.Sin(rad), 0) * radius;
-
+        Vector3 pos = GetValidSpawnPosition();
         currentScoreItem = Instantiate(scoreItemPrefab, pos, Quaternion.identity);
 
         var firstScale = currentScoreItem.transform.localScale;
         currentScoreItem.transform.localScale = Vector3.zero;
-
         currentScoreItem.transform.up = (pos - center.position).normalized;
 
         currentScoreItem.transform.DOScale(firstScale, spawnAnimationTime)
@@ -137,9 +111,43 @@ public class ObstacleManager : MonoBehaviour
             .SetEase(Ease.Linear);
     }
 
+    Vector3 GetValidSpawnPosition()
+    {
+        int attempts = 0;
+        Vector3 pos = Vector3.zero;
+        float radius = Random.value > 0.5f ? insideRadius : outsideRadius;
+
+        while (attempts < 50)
+        {
+            float angle = Random.Range(0f, 360f);
+            float rad = angle * Mathf.Deg2Rad;
+            pos = center.position + new Vector3(Mathf.Cos(rad), Mathf.Sin(rad), 0) * radius;
+
+            bool tooClose = false;
+            foreach (var ob in obstacles)
+            {
+                if (Vector3.Distance(pos, ob.transform.position) < minDistanceBetweenObjects)
+                {
+                    tooClose = true;
+                    break;
+                }
+            }
+
+            if (currentScoreItem != null && Vector3.Distance(pos, currentScoreItem.transform.position) < minDistanceBetweenObjects)
+                tooClose = true;
+
+            if (!tooClose)
+                break;
+
+            attempts++;
+        }
+
+        return pos;
+    }
 
     void RemoveWithAnimation(GameObject ob)
     {
+        DOTween.Kill(ob.transform);
         ob.transform.DOScale(Vector3.zero, removeAnimTime)
             .SetEase(Ease.InBack)
             .OnComplete(() =>
@@ -149,13 +157,14 @@ public class ObstacleManager : MonoBehaviour
             });
     }
 
-
     void RemoveScoreItem(GameObject ob)
     {
+        DOTween.Kill(ob.transform);
         ob.transform.DOScale(Vector3.zero, removeAnimTime)
             .SetEase(Ease.InBack)
             .OnComplete(() =>
             {
+                
                 if (ob != null)
                     Destroy(ob);
             });

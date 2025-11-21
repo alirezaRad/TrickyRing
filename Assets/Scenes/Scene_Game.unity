@@ -323,7 +323,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8266569440161013950, guid: 99c3706f84812fd40a06961f929dae6e, type: 3}
       propertyPath: insideRadius
-      value: 1.15
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 8266569440161013950, guid: 99c3706f84812fd40a06961f929dae6e, type: 3}
       propertyPath: outsideRadius
@@ -354,9 +354,17 @@ PrefabInstance:
       propertyPath: center
       value: 
       objectReference: {fileID: 412826641}
-    - target: {fileID: 1697011044444229008, guid: fc4f464ef4dd3b1489e12f02e3c0cff0, type: 3}
-      propertyPath: speedIncreaseRate
-      value: 1
+    - target: {fileID: 4854104173563841966, guid: fc4f464ef4dd3b1489e12f02e3c0cff0, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 0.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4854104173563841966, guid: fc4f464ef4dd3b1489e12f02e3c0cff0, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4854104173563841966, guid: fc4f464ef4dd3b1489e12f02e3c0cff0, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.atime1
+      value: 13647
       objectReference: {fileID: 0}
     - target: {fileID: 5131028281787999489, guid: fc4f464ef4dd3b1489e12f02e3c0cff0, type: 3}
       propertyPath: m_LocalPosition.x
