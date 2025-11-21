@@ -1,5 +1,6 @@
 using System;
 using DG.Tweening;
+using NaughtyAttributes;
 using ScriptableObjects.GameEvents;
 using UnityEngine;
 using TMPro;
@@ -10,6 +11,9 @@ namespace UI
     public class GameSceneAnimationManager : MonoBehaviour
     {
         public NullEvent OnBallStartMoving;
+        public NullEvent OnGameStart;
+        public NullEvent OnGameOver;
+        
         [Header("UI References")]
         public TextMeshProUGUI scoreText;
         public TextMeshProUGUI highScoreText;
@@ -42,10 +46,24 @@ namespace UI
             if (playerNameText != null) playerNameStartPos = playerNameText.transform.position;
         }
 
+        private void OnEnable()
+        {
+            OnGameOver.OnEventRaised += PlayEndAnimation;
+            OnGameStart.OnEventRaised += HandleGameStart;
+        }
+
         public void Start()
         {
             PlayStartAnimation();
         }
+        
+        private void HandleGameStart()
+        {
+            if(ball != null)
+                ball.SetActive(true);
+            PlayStartAnimation();
+        }
+
 
         public void PlayStartAnimation()
         {
@@ -89,18 +107,15 @@ namespace UI
             startSeq.Play();
         }
         
+        
         public void PlayEndAnimation()
         {
             Sequence endSeq = DOTween.Sequence();
 
-
-            if (ball != null)
-                endSeq.Append(ball.transform.DOMoveX(ballStartPos.x + 800, moveDuration).SetEase(Ease.InBack));
-
- 
+            endSeq.AppendInterval(1f);
+            
             if (ring != null)
-                endSeq.Join(ring.transform.DOScale(Vector3.zero, scaleDuration).SetEase(Ease.InBack));
-
+                endSeq.Append(ring.transform.DOScale(Vector3.zero, scaleDuration).SetEase(Ease.InBack));
 
             if (pauseButton != null)
                 endSeq.Join(pauseButton.transform.DOMoveX(pauseButtonStartPos.x + 800, moveDuration).SetEase(Ease.InBack));

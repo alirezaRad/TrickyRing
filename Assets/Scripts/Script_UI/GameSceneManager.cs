@@ -9,6 +9,7 @@ namespace UI
     {
        [SerializeField] private IntEvent OnScoreChanged;
        [SerializeField] private NullEvent OnGameEnded;
+       [SerializeField] private NullEvent OnGameStarted;
        
        [SerializeField] private TextMeshProUGUI playerNameText;
        [SerializeField] private TextMeshProUGUI playerScoreText;
@@ -29,6 +30,7 @@ namespace UI
        private void OnEnable()
        {
            OnScoreChanged.OnEventRaised += OnScoreChange;
+           OnGameStarted.OnEventRaised += Start;
        }
 
        private void OnScoreChange(int score)

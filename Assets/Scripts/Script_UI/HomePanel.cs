@@ -27,6 +27,11 @@ namespace UI
             onStartGame.OnEventRaised += NextScene;
             onSceneMenuAnimationEnded.OnEventRaised += UnloadMenuScene;
         }
+        private void OnDisable()
+        {
+            onStartGame.OnEventRaised -= NextScene;
+            onSceneMenuAnimationEnded.OnEventRaised -= UnloadMenuScene;
+        }
 
         private void NextScene()
         {

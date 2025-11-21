@@ -30,12 +30,16 @@ public class BallController : MonoBehaviour
     private float angle;
     private float radius;
     private bool isInside = false;
-    private bool canMove = false; // ball movement starts only after event
+    private bool canMove = false; 
 
     private SpriteRenderer spriteRenderer;
+    private Vector3 _firstLocalScale;
+    private float _firstSpeed ;
 
     private void Start()
     {
+        _firstSpeed = speed;
+        _firstLocalScale = transform.localScale;
         radius = outsideRadius;
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
@@ -108,6 +112,24 @@ public class BallController : MonoBehaviour
         if (spriteRenderer != null)
             dieSequence.Join(spriteRenderer.DOFade(0f, dieFadeTime));
 
-        dieSequence.OnComplete(() => Destroy(gameObject));
+        dieSequence.OnComplete(() =>
+        {
+            float rad = 0f;
+            transform.position = center.position + new Vector3(Mathf.Cos(rad), Mathf.Sin(rad), 0) * radius;
+            
+            gameObject.SetActive(false);
+            DOTween.Kill(transform);
+            
+            if (spriteRenderer != null)
+                spriteRenderer.color = new Color(0,0,0,1);
+            
+            angle = 0f;
+            radius = outsideRadius;
+            transform.localScale = _firstLocalScale;
+            isInside = false;
+            canMove = false;
+            speed = _firstSpeed;
+            _score = 0;
+        });
     }
 }

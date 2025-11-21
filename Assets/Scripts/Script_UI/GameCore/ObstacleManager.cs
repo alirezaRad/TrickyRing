@@ -8,6 +8,7 @@ public class ObstacleManager : MonoBehaviour
 {
     public IntEvent OnScoreChanged;
     public NullEvent OnBallStartMovingEvent;
+    public NullEvent OnGameOverEvent;
     
 
     public Transform center;
@@ -27,6 +28,8 @@ public class ObstacleManager : MonoBehaviour
 
     List<GameObject> obstacles = new List<GameObject>();
     GameObject currentScoreItem;
+    
+    private bool isGameOver = false;
 
     
     
@@ -35,6 +38,7 @@ public class ObstacleManager : MonoBehaviour
         var seq = DOTween.Sequence();
         seq.AppendCallback(() =>
         {
+            isGameOver = false;
             for (int i = 0; i < 4; i++)
                 SpawnNewObstacle();
             RefreshScoreItem();
@@ -46,11 +50,33 @@ public class ObstacleManager : MonoBehaviour
     {
         OnScoreChanged.OnEventRaised += OnScoreEvent;
         OnBallStartMovingEvent.OnEventRaised += OnBallStartMoving;
+        OnGameOverEvent.OnEventRaised += CleaningRing;
+    }
+
+    private void CleaningRing()
+    {
+        isGameOver = true;
+        List<GameObject> toRemove = new List<GameObject>();
+
+        for (int i = 0; i < obstacles.Count; i++)
+        {
+            toRemove.Add(obstacles[i]);
+        }
+        
+        obstacles.Clear();
+        
+        foreach (var ob in toRemove)
+                RemoveWithAnimation(ob);
+        
+        RemoveScoreItem(currentScoreItem);
+      
     }
 
     void OnDisable()
     {
         OnScoreChanged.OnEventRaised -= OnScoreEvent;
+        OnBallStartMovingEvent.OnEventRaised -= OnBallStartMoving;
+        OnGameOverEvent.OnEventRaised -= CleaningRing;
     }
 
     void OnScoreEvent(int score)
@@ -69,6 +95,7 @@ public class ObstacleManager : MonoBehaviour
 
     void RefreshObstacles()
     {
+        if(isGameOver) return;
         if (obstacles.Count == 0)
             return;
 
@@ -91,6 +118,8 @@ public class ObstacleManager : MonoBehaviour
 
     void SpawnNewObstacle()
     {
+        if(isGameOver) return;
+        
         Vector3 pos = GetValidSpawnPosition();
         GameObject ob = Instantiate(obstaclePrefab, pos, Quaternion.identity);
         obstacles.Add(ob);
@@ -103,6 +132,8 @@ public class ObstacleManager : MonoBehaviour
 
     void RefreshScoreItem()
     {
+        if(isGameOver) return;
+        
         if (currentScoreItem != null)
             RemoveScoreItem(currentScoreItem);
 
@@ -169,6 +200,7 @@ public class ObstacleManager : MonoBehaviour
 
     void RemoveScoreItem(GameObject ob)
     {
+        
         DOTween.Kill(ob.transform);
         ob.transform.DOScale(Vector3.zero, removeAnimTime)
             .SetEase(Ease.InBack)
