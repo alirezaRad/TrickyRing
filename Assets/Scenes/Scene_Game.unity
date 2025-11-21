@@ -1483,10 +1483,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ring
       objectReference: {fileID: 0}
-    - target: {fileID: 5455259625687474337, guid: 99c3706f84812fd40a06961f929dae6e, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7798206852334355926, guid: 99c3706f84812fd40a06961f929dae6e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1527,42 +1523,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8266569440161013950, guid: 99c3706f84812fd40a06961f929dae6e, type: 3}
-      propertyPath: scoreStep
-      value: 5000
-      objectReference: {fileID: 0}
-    - target: {fileID: 8266569440161013950, guid: 99c3706f84812fd40a06961f929dae6e, type: 3}
-      propertyPath: reduceSpeed
-      value: 0.005
-      objectReference: {fileID: 0}
-    - target: {fileID: 8266569440161013950, guid: 99c3706f84812fd40a06961f929dae6e, type: 3}
-      propertyPath: spawnInside
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8266569440161013950, guid: 99c3706f84812fd40a06961f929dae6e, type: 3}
-      propertyPath: insideRadius
-      value: 1.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8266569440161013950, guid: 99c3706f84812fd40a06961f929dae6e, type: 3}
-      propertyPath: outsideRadius
-      value: 1.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 8266569440161013950, guid: 99c3706f84812fd40a06961f929dae6e, type: 3}
-      propertyPath: OnScoreChanged
-      value: 
-      objectReference: {fileID: 11400000, guid: db30db1ce9eefb04ab40230346534c26, type: 2}
-    - target: {fileID: 8266569440161013950, guid: 99c3706f84812fd40a06961f929dae6e, type: 3}
-      propertyPath: OnGameOverEvent
-      value: 
-      objectReference: {fileID: 11400000, guid: 5ccc7e5964b70384f887f7cae16219e1, type: 2}
-    - target: {fileID: 8266569440161013950, guid: 99c3706f84812fd40a06961f929dae6e, type: 3}
-      propertyPath: scoreItemPrefab
-      value: 
-      objectReference: {fileID: 7979489436589332806, guid: dab685c42a7f6ee42a3ae086dacdd4b2, type: 3}
-    - target: {fileID: 8266569440161013950, guid: 99c3706f84812fd40a06961f929dae6e, type: 3}
-      propertyPath: OnBallStartMovingEvent
-      value: 
-      objectReference: {fileID: 11400000, guid: 30e25eb3e35a48e4eaf85de946547ee8, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1656,62 +1616,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4728280588204005338, guid: 97e87851f85118e49abf4bfdafd5166a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4728280588204005338, guid: 97e87851f85118e49abf4bfdafd5166a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4728280588204005338, guid: 97e87851f85118e49abf4bfdafd5166a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 11400000, guid: 8e32f52907acef749bc4c24eccc840d6, type: 2}
-    - target: {fileID: 4728280588204005338, guid: 97e87851f85118e49abf4bfdafd5166a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4728280588204005338, guid: 97e87851f85118e49abf4bfdafd5166a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Raise
-      objectReference: {fileID: 0}
-    - target: {fileID: 4728280588204005338, guid: 97e87851f85118e49abf4bfdafd5166a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ScriptableObjects.GameEvents.NullEvent, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4728280588204005338, guid: 97e87851f85118e49abf4bfdafd5166a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 8135613188558557530, guid: 97e87851f85118e49abf4bfdafd5166a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8135613188558557530, guid: 97e87851f85118e49abf4bfdafd5166a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8135613188558557530, guid: 97e87851f85118e49abf4bfdafd5166a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 11400000, guid: cbbea3e9c0d85414996133b9a643d0c4, type: 2}
-    - target: {fileID: 8135613188558557530, guid: 97e87851f85118e49abf4bfdafd5166a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8135613188558557530, guid: 97e87851f85118e49abf4bfdafd5166a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Raise
-      objectReference: {fileID: 0}
-    - target: {fileID: 8135613188558557530, guid: 97e87851f85118e49abf4bfdafd5166a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ScriptableObjects.GameEvents.NullEvent, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 8135613188558557530, guid: 97e87851f85118e49abf4bfdafd5166a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 8459051857073456701, guid: 97e87851f85118e49abf4bfdafd5166a, type: 3}
       propertyPath: m_Name
       value: GameOverUI
@@ -1733,14 +1637,6 @@ PrefabInstance:
       propertyPath: center
       value: 
       objectReference: {fileID: 412826641}
-    - target: {fileID: 1697011044444229008, guid: fc4f464ef4dd3b1489e12f02e3c0cff0, type: 3}
-      propertyPath: OnStartMoving
-      value: 
-      objectReference: {fileID: 11400000, guid: 30e25eb3e35a48e4eaf85de946547ee8, type: 2}
-    - target: {fileID: 1697011044444229008, guid: fc4f464ef4dd3b1489e12f02e3c0cff0, type: 3}
-      propertyPath: increasedScoreByPickingStars
-      value: 1000
-      objectReference: {fileID: 0}
     - target: {fileID: 5131028281787999489, guid: fc4f464ef4dd3b1489e12f02e3c0cff0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.34
@@ -1784,10 +1680,6 @@ PrefabInstance:
     - target: {fileID: 5143587220191284237, guid: fc4f464ef4dd3b1489e12f02e3c0cff0, type: 3}
       propertyPath: m_Name
       value: ball
-      objectReference: {fileID: 0}
-    - target: {fileID: 5143587220191284237, guid: fc4f464ef4dd3b1489e12f02e3c0cff0, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

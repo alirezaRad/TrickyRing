@@ -33,10 +33,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 3491780013529641838}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 248.72, y: -98.305}
-  m_SizeDelta: {x: 497.44, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -100, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2802098111090123931
 CanvasRenderer:
@@ -202,10 +202,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db2ce9907bc443828cb256ae34969977, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnEndAction: {fileID: 0}
+  OnEndAction: {fileID: 11400000, guid: 9a85c4049258144438f62f4bc748c147, type: 2}
   rootGroup: {fileID: 7782677022406282682}
-  topPart: {fileID: 0}
-  bottomPart: {fileID: 0}
+  topPart: {fileID: 3491780013529641838}
+  bottomPart: {fileID: 2301263812109102104}
   fillBar: {fileID: 2159931938525310997}
   progressText: {fileID: 7685045236205965709}
   introDuration: 0.5
@@ -257,10 +257,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 3491780013529641838}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 563.24, y: -152.37}
-  m_SizeDelta: {x: 131.6, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 200, y: -50}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6105341160834135704
 CanvasRenderer:
@@ -522,7 +522,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 56.847492}
+  m_AnchoredPosition: {x: 0, y: 50}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8017159521753847259
@@ -532,7 +532,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4887559480145862543}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
   m_Name: 

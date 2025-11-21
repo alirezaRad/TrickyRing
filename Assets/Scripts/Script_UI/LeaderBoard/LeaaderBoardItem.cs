@@ -24,6 +24,7 @@ namespace UI.LeaderBoard
                 rankImage.color = Color.yellow;
                 nameImage.color = Color.yellow;
                 scoreImage.color = Color.yellow;
+                PlayerPrefsSaveService.Main.SaveInt("PlayerRank", rank);
             }
             else
             {

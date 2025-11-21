@@ -100,10 +100,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0a1a06de1b442fbb472ba3b68b28846, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnScoreChanged: {fileID: 11400000, guid: db30db1ce9eefb04ab40230346534c26, type: 2}
+  OnBallStartMovingEvent: {fileID: 11400000, guid: 30e25eb3e35a48e4eaf85de946547ee8, type: 2}
+  OnGameOverEvent: {fileID: 11400000, guid: 5ccc7e5964b70384f887f7cae16219e1, type: 2}
   center: {fileID: 7798206852334355926}
   obstaclePrefab: {fileID: 4303563343606462409, guid: 4aa73ba9100b0f946be095224ef856cc, type: 3}
-  insideRadius: 1.3
-  outsideRadius: 2
-  spawnInterval: 1.2
+  scoreItemPrefab: {fileID: 7979489436589332806, guid: dab685c42a7f6ee42a3ae086dacdd4b2, type: 3}
+  insideRadius: 1.1
+  outsideRadius: 1.35
+  scoreStep: 5000
   spawnAnimationTime: 0.2
-  spawnInside: 1
+  removeAnimTime: 0.25
+  minDistanceBetweenObjects: 0.5

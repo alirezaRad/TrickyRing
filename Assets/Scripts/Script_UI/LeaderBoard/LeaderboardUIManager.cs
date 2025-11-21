@@ -33,8 +33,10 @@ namespace UI.LeaderBoard
 
         private void OnDisable()
         {
+            OnDataLoaded.OnEventRaised -= EnableScrollRect;
             OnDataLoaded.OnEventRaised -= LoadUIFromData;
             scrollRect.onValueChanged.RemoveAllListeners();
+            OnLeaderboardLoading.OnEventRaised -= DisableScrollRect;
         }
 
         private void DisableScrollRect()

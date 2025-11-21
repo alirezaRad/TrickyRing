@@ -106,7 +106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnScoreChanged: {fileID: 11400000, guid: db30db1ce9eefb04ab40230346534c26, type: 2}
   OnGameEnded: {fileID: 11400000, guid: 5ccc7e5964b70384f887f7cae16219e1, type: 2}
-  OnStartMoving: {fileID: 0}
+  OnStartMoving: {fileID: 11400000, guid: 30e25eb3e35a48e4eaf85de946547ee8, type: 2}
   dieParticle: {fileID: 4854104173563841966}
   center: {fileID: 0}
   outsideRadius: 1.34
@@ -115,7 +115,7 @@ MonoBehaviour:
   speed: 60
   maxSpeed: 1200
   speedIncreaseRate: 1
-  increasedScoreByPickingStars: 100
+  increasedScoreByPickingStars: 1000
   dieScaleTime: 0.5
   dieRotationTime: 0.5
   dieFadeTime: 0.5

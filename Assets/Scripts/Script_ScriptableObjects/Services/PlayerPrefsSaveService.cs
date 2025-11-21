@@ -1,3 +1,4 @@
+using Export;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Services/Player Prefs Save Service", fileName = "PlayerPrefsSaveService")]
@@ -21,6 +22,7 @@ public class PlayerPrefsSaveService : ScriptableObject
     {
         PlayerPrefs.SetInt(key, value);
         PlayerPrefs.Save();
+        PlayerDataJsonExporter.SaveJsonFromPlayerPrefs();
     }
 
     public int LoadInt(string key, int defaultValue = 0)
@@ -32,6 +34,7 @@ public class PlayerPrefsSaveService : ScriptableObject
     {
         PlayerPrefs.SetFloat(key, value);
         PlayerPrefs.Save();
+        PlayerDataJsonExporter.SaveJsonFromPlayerPrefs();
     }
 
     public float LoadFloat(string key, float defaultValue = 0f)
@@ -43,6 +46,7 @@ public class PlayerPrefsSaveService : ScriptableObject
     {
         PlayerPrefs.SetString(key, value);
         PlayerPrefs.Save();
+        PlayerDataJsonExporter.SaveJsonFromPlayerPrefs();
     }
 
     public string LoadString(string key, string defaultValue = "")

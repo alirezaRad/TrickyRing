@@ -48,6 +48,7 @@ namespace Data
         private void OnDisable()
         {
             OnLeaderBoardPanelSelected.OnEventRaised -= CheckForLoad;
+            OnPanelSelected.OnEventRaised += CheckForFirstShow;
         }
 
         private void CheckForLoad(int tabType)
