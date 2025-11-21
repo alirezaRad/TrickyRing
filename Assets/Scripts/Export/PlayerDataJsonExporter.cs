@@ -30,7 +30,6 @@ namespace Export
                         Directory.CreateDirectory(directory);
 
                 File.WriteAllText(filePath, json);
-                Debug.Log($"Info saved to JSON: {filePath}");
             }
             catch (Exception ex)
             {

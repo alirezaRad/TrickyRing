@@ -188,12 +188,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05f11377303d4bc8b898d29962ee9dbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnSceneMenuAnimationEnd: {fileID: 0}
+  OnSceneMenuAnimationEnd: {fileID: 11400000, guid: 37fb5f7219618e941805bdd1f82811e0, type: 2}
   OnStartGame: {fileID: 11400000, guid: 406da26460a67b2408862f1deb2fcea4, type: 2}
   playerName: {fileID: 8766278257900702579}
   gameName: {fileID: 669510542716161119}
   startButton: {fileID: 7039576471504191278}
-  moveDistance: 800
+  moveDistance: 1000
   moveDuration: 1
   flipRotation: -90
 --- !u!114 &1646724229074731680
@@ -212,7 +212,7 @@ MonoBehaviour:
   playerHighScoreText: {fileID: 649819654466008162}
   startGameButton: {fileID: 3054698334067321639}
   onStartGame: {fileID: 11400000, guid: 406da26460a67b2408862f1deb2fcea4, type: 2}
-  onSceneMenuAnimationEnded: {fileID: 0}
+  onSceneMenuAnimationEnded: {fileID: 11400000, guid: 37fb5f7219618e941805bdd1f82811e0, type: 2}
 --- !u!1 &2285429793465393963
 GameObject:
   m_ObjectHideFlags: 0
@@ -648,6 +648,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 37f852b3d1f439849927d92a834b1a8f, type: 2}
+        m_TargetAssemblyTypeName: ScriptableObjects.GameEvents.NullEvent, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  reactivateDelay: 2
 --- !u!1 &3884469533814909926
 GameObject:
   m_ObjectHideFlags: 0

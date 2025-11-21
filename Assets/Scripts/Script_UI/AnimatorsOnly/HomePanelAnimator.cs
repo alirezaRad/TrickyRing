@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using DG.Tweening;
+using Enums;
 using NaughtyAttributes;
 using ScriptableObjects.GameEvents;
 
@@ -106,6 +107,7 @@ namespace UI
         [Button]
         public void PlayExitAnimation()
         {
+            AudioManger.AudioManager.Instance.FadeMusicTo(SoundType.GameSceneMusic);
 
             if (exitSequence != null && exitSequence.IsActive())
                 exitSequence.Kill();

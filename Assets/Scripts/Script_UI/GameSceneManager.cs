@@ -1,4 +1,5 @@
 using System;
+using Enums;
 using ScriptableObjects.GameEvents;
 using TMPro;
 using UnityEngine;
@@ -39,6 +40,7 @@ namespace UI
            playerScoreText.text = "Score : " + score;
            if (playerScore > playerHighScore)
            {
+               AudioManger.AudioManager.Instance.PlaySFX(SoundType.HighScore);
                playerHighScore = playerScore;
                PlayerPrefsSaveService.Main.SaveInt("PlayerScore", playerHighScore);
            }

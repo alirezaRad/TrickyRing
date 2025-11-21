@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -44,10 +45,9 @@ namespace UI
         }
 
 
-        protected override void OnDisable()
+
+        public  void ActivateInteractableAfterDelay()
         {
-            base.OnDisable();
-            
             if (!interactable && !waiting && gameObject.activeInHierarchy)
                 StartCoroutine(ReEnableAfterDelay());
         }
@@ -56,7 +56,6 @@ namespace UI
         {
             waiting = true;
             yield return new WaitForSeconds(reactivateDelay);
-
             interactable = true;
             waiting = false;
         }
