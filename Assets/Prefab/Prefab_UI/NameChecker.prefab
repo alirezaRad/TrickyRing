@@ -770,7 +770,7 @@ GameObject:
   - component: {fileID: 7911606600214630806}
   - component: {fileID: 6094298956780952368}
   m_Layer: 5
-  m_Name: BootStrap
+  m_Name: NameChecker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

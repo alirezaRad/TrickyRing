@@ -7,6 +7,8 @@ using DG.Tweening;
 public class ObstacleManager : MonoBehaviour
 {
     public IntEvent OnScoreChanged;
+    public NullEvent OnBallStartMovingEvent;
+    
 
     public Transform center;
     public GameObject obstaclePrefab;
@@ -26,16 +28,24 @@ public class ObstacleManager : MonoBehaviour
     List<GameObject> obstacles = new List<GameObject>();
     GameObject currentScoreItem;
 
-    void Start()
+    
+    
+    private void OnBallStartMoving()
     {
-        for (int i = 0; i < 4; i++)
-            SpawnNewObstacle();
-        RefreshScoreItem();
+        var seq = DOTween.Sequence();
+        seq.AppendCallback(() =>
+        {
+            for (int i = 0; i < 4; i++)
+                SpawnNewObstacle();
+            RefreshScoreItem();
+        }).SetDelay(0.5f);
     }
+
 
     void OnEnable()
     {
         OnScoreChanged.OnEventRaised += OnScoreEvent;
+        OnBallStartMovingEvent.OnEventRaised += OnBallStartMoving;
     }
 
     void OnDisable()

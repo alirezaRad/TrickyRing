@@ -11,7 +11,7 @@ using UnityEngine.UI;
 
 namespace UI
 {
-    public class BootStrap : MonoBehaviour
+    public class NameChecker : MonoBehaviour
     {
         [SerializeField] private NullEvent OnLoadingEnd;
         [Header("Refs")]

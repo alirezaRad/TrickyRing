@@ -2,6 +2,7 @@ using System;
 using ScriptableObjects.GameEvents;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using Button = UnityEngine.UI.Button;
 
@@ -13,6 +14,7 @@ namespace UI
         [SerializeField] private TextMeshProUGUI playerHighScoreText;
         [SerializeField] private Button startGameButton;
         [SerializeField] private NullEvent onStartGame;
+        [SerializeField] private NullEvent onSceneMenuAnimationEnded;
         private void Start()
         {
             playerNameText.text = PlayerPrefsSaveService.Main.LoadString("PlayerName","HoneyDrops");
@@ -23,6 +25,7 @@ namespace UI
         private void OnEnable()
         {
             onStartGame.OnEventRaised += NextScene;
+            onSceneMenuAnimationEnded.OnEventRaised += UnloadMenuScene;
         }
 
         private void NextScene()
@@ -32,7 +35,17 @@ namespace UI
 
         private void StartGame()
         {
+            var eventSystem = FindFirstObjectByType<EventSystem>();
+            Destroy(eventSystem.gameObject);
+            var old_Camera = FindFirstObjectByType<Camera>();
+            Destroy(old_Camera.gameObject);
             onStartGame.Raise();
+
+        }
+        
+        private void UnloadMenuScene()
+        {
+            SceneManager.UnloadSceneAsync("Scene_Menu");
         }
     }
 }

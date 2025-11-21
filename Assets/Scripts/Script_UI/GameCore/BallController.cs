@@ -6,6 +6,7 @@ public class BallController : MonoBehaviour
 {
     [SerializeField] private IntEvent OnScoreChanged;
     [SerializeField] private NullEvent OnGameEnded;
+    [SerializeField] private NullEvent OnStartMoving;
     [SerializeField] private ParticleSystem dieParticle;
 
     [SerializeField] private Transform center;
@@ -29,6 +30,7 @@ public class BallController : MonoBehaviour
     private float angle;
     private float radius;
     private bool isInside = false;
+    private bool canMove = false; // ball movement starts only after event
 
     private SpriteRenderer spriteRenderer;
 
@@ -41,15 +43,25 @@ public class BallController : MonoBehaviour
     private void OnEnable()
     {
         OnGameEnded.OnEventRaised += Die;
+        OnStartMoving.OnEventRaised += StartMovement; // subscribe to start event
     }
 
     private void OnDisable()
     {
         OnGameEnded.OnEventRaised -= Die;
+        OnStartMoving.OnEventRaised -= StartMovement;
+    }
+
+    private void StartMovement()
+    {
+        canMove = true;
     }
 
     private void Update()
     {
+        if (!canMove)
+            return;
+
         if (speed < maxSpeed)
             speed = Mathf.Min(speed + speedIncreaseRate * Time.deltaTime, maxSpeed);
 
@@ -70,6 +82,9 @@ public class BallController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (!canMove)
+            return;
+
         if (other.CompareTag("Obsticle"))
             OnGameEnded.Raise();
         else

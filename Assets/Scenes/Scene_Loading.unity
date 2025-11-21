@@ -653,7 +653,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6706762693516578219, guid: 7c1db3c9cef2c3d4d9077535f68499bb, type: 3}
       propertyPath: m_Name
-      value: BootStrap
+      value: NameChecker
       objectReference: {fileID: 0}
     - target: {fileID: 7911606600214630806, guid: 7c1db3c9cef2c3d4d9077535f68499bb, type: 3}
       propertyPath: m_Pivot.x

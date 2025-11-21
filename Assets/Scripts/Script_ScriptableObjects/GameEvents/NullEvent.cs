@@ -3,6 +3,7 @@ using System;
 using Enums;
 using NaughtyAttributes;
 
+
 namespace ScriptableObjects.GameEvents
 {
 [CreateAssetMenu(menuName = "GameEvents/NullEvent")]
@@ -13,8 +14,6 @@ namespace ScriptableObjects.GameEvents
         {
             OnEventRaised?.Invoke();
         }
-        
-
         [Button]
         public void RaiseTest()
         {

@@ -8,6 +8,7 @@ namespace UI
 {
     public class HomePanelAnimator : MonoBehaviour
     {
+        [SerializeField] private NullEvent OnSceneMenuAnimationEnd;
         [SerializeField] private NullEvent OnStartGame;
         [Header("Refs")]
         [SerializeField] private RectTransform playerName;
@@ -24,9 +25,6 @@ namespace UI
         private Vector2 startButtonOriginal;
         private Quaternion gameNameRotationOriginal;
         
-        private Sequence playerNameSeq;
-        private Sequence gameNameSeq;
-        private Sequence startButtonSeq;
 
         private void Awake()
         {
@@ -38,12 +36,12 @@ namespace UI
 
         private void OnEnable()
         {
-            OnStartGame.OnEventRaised += ReverseAnimations;
+            OnStartGame.OnEventRaised += PlayExitAnimation;
             
         }
         private void OnDisable()
         {
-            OnStartGame.OnEventRaised -= ReverseAnimations;
+            OnStartGame.OnEventRaised -= PlayExitAnimation;
         }
 
         private void Start()
@@ -55,7 +53,7 @@ namespace UI
 
         private void AnimatePlayerName()
         {
-            playerNameSeq = DOTween.Sequence().SetAutoKill(false);
+            var playerNameSeq = DOTween.Sequence();
             
             playerName.anchoredPosition = playerNameOriginal + new Vector2(-moveDistance, 0);
             
@@ -67,7 +65,7 @@ namespace UI
 
         private void AnimateGameName()
         {
-            gameNameSeq = DOTween.Sequence().SetAutoKill(false);
+            var gameNameSeq = DOTween.Sequence();
             
             gameName.anchoredPosition = gameNameOriginal + new Vector2(moveDistance, 0);
             gameName.localRotation = Quaternion.Euler(0, 0, flipRotation);
@@ -92,7 +90,7 @@ namespace UI
 
         private void AnimateStartButton()
         {
-            startButtonSeq = DOTween.Sequence().SetAutoKill(false);
+            var startButtonSeq = DOTween.Sequence();
 
             startButton.anchoredPosition = startButtonOriginal + new Vector2(0, -moveDistance);
 
@@ -102,17 +100,54 @@ namespace UI
             );
         }
 
+
+        private Sequence exitSequence;
+
         [Button]
-        public void ReverseAnimations()
+        public void PlayExitAnimation()
         {
-            if (playerNameSeq != null && playerNameSeq.IsActive())
-                playerNameSeq.PlayBackwards();
 
-            if (gameNameSeq != null && gameNameSeq.IsActive())
-                gameNameSeq.PlayBackwards();
+            if (exitSequence != null && exitSequence.IsActive())
+                exitSequence.Kill();
 
-            if (startButtonSeq != null && startButtonSeq.IsActive())
-                startButtonSeq.PlayBackwards();
+            exitSequence = DOTween.Sequence();
+
+
+            exitSequence.Join(
+                playerName.DOAnchorPos(playerNameOriginal + new Vector2(-moveDistance, 0), moveDuration)
+                    .SetEase(Ease.InCubic)
+            );
+
+            
+
+
+            exitSequence.Join(
+                gameName.DOAnchorPos(gameNameOriginal + new Vector2(0, moveDistance), moveDuration)
+                    .SetEase(Ease.InBack)
+            );
+
+            exitSequence.Join(
+                gameName.DOLocalRotate(new Vector3(0, 0, 180f), moveDuration)
+                    .SetEase(Ease.InOutQuad)
+            );
+
+
+            exitSequence.Join(
+                startButton.DOAnchorPos(startButtonOriginal + new Vector2(0, -moveDistance), moveDuration)
+                    .SetEase(Ease.InBack)
+            );
+
+            exitSequence.Join(
+                startButton.DOScale(0f, moveDuration)
+                    .SetEase(Ease.InBack)
+            );
+
+
+            exitSequence.OnComplete(() =>
+            {
+                OnSceneMenuAnimationEnd.Raise();
+            });
         }
+
     }
 }
