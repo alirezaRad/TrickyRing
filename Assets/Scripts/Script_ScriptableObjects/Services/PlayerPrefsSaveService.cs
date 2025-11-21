@@ -3,12 +3,19 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Services/Player Prefs Save Service", fileName = "PlayerPrefsSaveService")]
 public class PlayerPrefsSaveService : ScriptableObject
 {
-    public static PlayerPrefsSaveService Main;
-
-    private void OnEnable()
+    public static PlayerPrefsSaveService Main
     {
-        Main = this;
+        get
+        {
+            if (!_main)
+            {
+                _main = Resources.Load<PlayerPrefsSaveService>("PlayerPrefsSaveService");
+            }
+            return _main;
+        }
     }
+    private static PlayerPrefsSaveService _main;
+
     
     public void SaveInt(string key, int value)
     {

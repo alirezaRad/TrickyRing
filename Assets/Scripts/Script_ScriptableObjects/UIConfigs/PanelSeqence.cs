@@ -9,13 +9,21 @@ namespace Script_ScriptableObjects.UIConfigs
     {
         public TabType[] sequence;
 
-        public static PanelSequence Main; 
-        public TabType firstActiveTab;
-
-        private void OnEnable()
+        public static PanelSequence Main
         {
-            Main = this;
+            get
+            {
+                if (_main == null)
+                {
+                    _main = Resources.Load<PanelSequence>("ScriptableObject_Panel_Sequence");
+                }
+                return _main;
+            }
         }
+        private static PanelSequence _main;
+
+        public TabType firstActiveTab;
+        
     }
 
 }

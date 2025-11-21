@@ -5,6 +5,7 @@ using Random = UnityEngine.Random;
 using Enums;
 using ScriptableObjects.GameEvents;
 using DataStructure;
+using UnityEngine.Serialization;
 
 
 namespace Data
@@ -14,12 +15,18 @@ namespace Data
         public static LeaderboardData Instance { get; private set; }
 
         [SerializeField] private TextAsset namesFile;
-        [SerializeField] private IntEvent OnPanelSelected;
+        [SerializeField] private IntEvent OnLeaderBoardPanelSelected;
         [SerializeField] private NullEvent OnDataLoaded;
+        [SerializeField] private NullEvent OnLoadingPanelShow;
+        [SerializeField] private IntEvent OnPanelSelected;
 
         public List<PlayerInfo> players;
         [SerializeField] private int loadFrameCount = 1;
         [SerializeField] private int insertChunkSize = 5000;
+        private bool _isLoading;
+        private LeaderBoardTabType _loadingTab = LeaderBoardTabType.Nothing;
+        private Coroutine loadingCoroutine;
+        private Coroutine insertCoroutine;
 
         private void Awake()
         {
@@ -28,21 +35,36 @@ namespace Data
 
         private void OnEnable()
         {
-            OnPanelSelected.OnEventRaised += CheckForLoad;
+            OnLeaderBoardPanelSelected.OnEventRaised += CheckForLoad;
+            OnPanelSelected.OnEventRaised += CheckForFirstShow;
+        }
+
+        private void CheckForFirstShow(int value)
+        {
+            if (value == (int)TabType.LeaderBoard)
+                OnLeaderBoardPanelSelected.Raise((int)LeaderBoardTabType.Daily);
         }
 
         private void OnDisable()
         {
-            OnPanelSelected.OnEventRaised -= CheckForLoad;
+            OnLeaderBoardPanelSelected.OnEventRaised -= CheckForLoad;
         }
 
         private void CheckForLoad(int tabType)
         {
-            StartCoroutine(LoadLeaderboardCoroutine());
+            if(tabType == (int)_loadingTab) return;
+            if (_isLoading) return;
+            
+            OnLoadingPanelShow.Raise();
+            _loadingTab = (LeaderBoardTabType)tabType;
+            if(loadingCoroutine!=null) StopCoroutine(loadingCoroutine);
+            if(insertCoroutine!=null) StopCoroutine(insertCoroutine);
+            loadingCoroutine = StartCoroutine(LoadLeaderboardCoroutine());
         }
 
         private IEnumerator LoadLeaderboardCoroutine()
         {
+            _isLoading = true;
             string[] lines = namesFile.text.Split('\n');
             int total = lines.Length;
             int chunkSize = Mathf.CeilToInt((float)total / loadFrameCount);
@@ -81,9 +103,8 @@ namespace Data
                 isUser = true
             };
 
-            yield return StartCoroutine(InsertUserCoroutine(user));
-
-            Debug.Log("Leaderboard loaded: " + players.Count + " players");
+            yield return insertCoroutine = StartCoroutine(InsertUserCoroutine(user));
+            
         }
 
         private IEnumerator InsertUserCoroutine(PlayerInfo user)
@@ -96,16 +117,17 @@ namespace Data
 
             int total = players.Count;
             
-            for (int i = index + 1; i < total; i += insertChunkSize)
+            for (int i = 1; i < total; i += insertChunkSize)
             {
                 int end = Mathf.Min(i + insertChunkSize, total);
                 for (int j = i; j < end; j++)
                 {
-                    players[j].rank += 1;
+                    players[j].rank = j;
                 }
                 yield return null;
             }
             OnDataLoaded.Raise();
+            _isLoading = false;
         }
     }
 }

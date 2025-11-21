@@ -11,7 +11,7 @@ namespace UI
         private void Start()
         {
             playerNameText.text = PlayerPrefsSaveService.Main.LoadString("PlayerName","HoneyDrops");
-            playerHighScoreText.text = "HighScore : " + PlayerPrefsSaveService.Main.LoadInt("PlayerHighScore", 0).ToString();
+            playerHighScoreText.text = "HighScore : " + PlayerPrefsSaveService.Main.LoadInt("PlayerHighScore", 5000).ToString();
         }
     }
 }

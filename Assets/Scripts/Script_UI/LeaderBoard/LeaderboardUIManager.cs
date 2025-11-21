@@ -9,79 +9,95 @@ namespace UI.LeaderBoard
     public class LeaderboardUIManager : MonoBehaviour
     {
         [SerializeField] private NullEvent OnDataLoaded;
-        [SerializeField] private RectTransform content; 
+        [SerializeField] private NullEvent OnLeaderboardLoading;
+        [SerializeField] private RectTransform content;
         [SerializeField] private ScrollRect scrollRect;
         [SerializeField] private GameObject itemPrefab;
-        [SerializeField] private int visibleCount = 20; 
+        [SerializeField] private int visibleCount = 20;
         [SerializeField] private float itemHeight = 80f;
 
-        private List<GameObject> itemPool = new List<GameObject>();
+        private readonly List<GameObject> itemPool = new List<GameObject>();
         private int totalCount;
 
+
+        private void Start()
+        {
+            EnsurePoolSize(visibleCount);
+        }
         private void OnEnable()
         {
             OnDataLoaded.OnEventRaised += LoadUIFromData;
+            OnDataLoaded.OnEventRaised += EnableScrollRect;
+            OnLeaderboardLoading.OnEventRaised += DisableScrollRect;
         }
 
         private void OnDisable()
         {
-            OnDataLoaded.OnEventRaised -= AutoScrollToUser;
+            OnDataLoaded.OnEventRaised -= LoadUIFromData;
             scrollRect.onValueChanged.RemoveAllListeners();
         }
 
+        private void DisableScrollRect()
+        {
+            scrollRect.enabled = false;
+        }
+        private void EnableScrollRect()
+        {
+            scrollRect.enabled = true;
+        }
+        
+
         private void LoadUIFromData()
         {
-
-            foreach (var go in itemPool)
-                Destroy(go);
-            itemPool.Clear();
-
             totalCount = Data.LeaderboardData.Instance.players.Count;
 
-
             content.sizeDelta = new Vector2(content.sizeDelta.x, totalCount * itemHeight);
+            
+            scrollRect.onValueChanged.RemoveAllListeners();
+            scrollRect.onValueChanged.AddListener(OnScrollValueChanged);
+
+            AutoScrollToUser();
+        }
 
 
-            for (int i = 0; i < visibleCount; i++)
+        private void EnsurePoolSize(int needed)
+        {
+            while (itemPool.Count < needed)
             {
                 GameObject go = Instantiate(itemPrefab, content);
                 itemPool.Add(go);
             }
 
-            scrollRect.onValueChanged.RemoveAllListeners();
-            scrollRect.onValueChanged.AddListener(OnScrollValueChanged);
 
-
-            AutoScrollToUser();
+            for (int i = 0; i < itemPool.Count; i++)
+                itemPool[i].SetActive(i < needed);
         }
 
 
         private void AutoScrollToUser()
         {
             int userIndex = Data.LeaderboardData.Instance.players.FindIndex(p => p.isUser);
-            if (userIndex == -1) return; 
-
+            if (userIndex == -1) return;
 
             int startIndex = Mathf.Clamp(userIndex - visibleCount / 2, 0, totalCount - visibleCount);
 
             UpdateItems(startIndex);
-            
+
             float normalized = 1f - ((float)startIndex / (totalCount - visibleCount));
             scrollRect.verticalNormalizedPosition = Mathf.Clamp01(normalized);
         }
-
 
 
         private void OnScrollValueChanged(Vector2 pos)
         {
             if (totalCount <= visibleCount) return;
 
+            int startIndex = Mathf.FloorToInt((1 - pos.y) * (totalCount - visibleCount));
+            startIndex = Mathf.Clamp(startIndex+5, 0, totalCount - visibleCount);
 
-            int firstIndex = Mathf.FloorToInt((1 - pos.y) * (totalCount - visibleCount));
-            firstIndex = Mathf.Clamp(firstIndex, 0, totalCount - visibleCount);
-
-            UpdateItems(firstIndex);
+            UpdateItems(startIndex);
         }
+
 
         private void UpdateItems(int startIndex)
         {
@@ -97,14 +113,15 @@ namespace UI.LeaderBoard
                     continue;
                 }
 
-                PlayerInfo player = players[dataIndex];
-                itemPool[i].SetActive(true);
+                GameObject go = itemPool[i];
+                go.SetActive(true);
 
-                var leaderBoardItem = itemPool[i].GetComponent<LeaderBoardItem>();
-                leaderBoardItem.Initialize(player.rank, player.name, player.score, player.isUser);
+                var player = players[dataIndex];
 
+                var ui = go.GetComponent<LeaderBoardItem>();
+                ui.Initialize(player.rank, player.name, player.score, player.isUser);
 
-                var rt = itemPool[i].GetComponent<RectTransform>();
+                RectTransform rt = go.GetComponent<RectTransform>();
                 rt.anchoredPosition = new Vector2(0, -dataIndex * itemHeight);
             }
         }
