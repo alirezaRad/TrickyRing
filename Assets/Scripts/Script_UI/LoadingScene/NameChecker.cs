@@ -83,8 +83,7 @@ namespace UI
         private void AnimateMessageUI()
         {
             messagePanel.anchoredPosition = messageOriginal + new Vector2(0, moveDistance);
-            messagePanel.DOAnchorPos(messageOriginal, bounceDuration)
-                        .SetEase(Ease.OutBounce);
+            messagePanel.DOAnchorPos(messageOriginal, bounceDuration);
             
             inputFieldRectTransform.anchoredPosition = inputOriginal + new Vector2(-moveDistance, 0);
             inputFieldRectTransform.DOAnchorPos(inputOriginal, moveDuration)

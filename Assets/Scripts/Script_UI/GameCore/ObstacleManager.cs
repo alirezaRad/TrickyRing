@@ -90,6 +90,7 @@ public class ObstacleManager : MonoBehaviour
         }
 
         RefreshObstacles();
+        currentScoreItem.GetComponentInChildren<ParticleSystem>().Play();
         RefreshScoreItem();
     }
 
