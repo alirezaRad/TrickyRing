@@ -313,6 +313,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8266569440161013950, guid: 99c3706f84812fd40a06961f929dae6e, type: 3}
+      propertyPath: reduceSpeed
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266569440161013950, guid: 99c3706f84812fd40a06961f929dae6e, type: 3}
+      propertyPath: spawnInside
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266569440161013950, guid: 99c3706f84812fd40a06961f929dae6e, type: 3}
+      propertyPath: insideRadius
+      value: 1.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266569440161013950, guid: 99c3706f84812fd40a06961f929dae6e, type: 3}
+      propertyPath: outsideRadius
+      value: 1.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266569440161013950, guid: 99c3706f84812fd40a06961f929dae6e, type: 3}
+      propertyPath: OnScoreChanged
+      value: 
+      objectReference: {fileID: 11400000, guid: db30db1ce9eefb04ab40230346534c26, type: 2}
+    - target: {fileID: 8266569440161013950, guid: 99c3706f84812fd40a06961f929dae6e, type: 3}
+      propertyPath: scoreItemPrefab
+      value: 
+      objectReference: {fileID: 7979489436589332806, guid: dab685c42a7f6ee42a3ae086dacdd4b2, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -330,6 +354,10 @@ PrefabInstance:
       propertyPath: center
       value: 
       objectReference: {fileID: 412826641}
+    - target: {fileID: 1697011044444229008, guid: fc4f464ef4dd3b1489e12f02e3c0cff0, type: 3}
+      propertyPath: speedIncreaseRate
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5131028281787999489, guid: fc4f464ef4dd3b1489e12f02e3c0cff0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

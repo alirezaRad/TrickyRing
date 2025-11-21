@@ -1,6 +1,7 @@
 using UnityEngine;
 using System;
 using Enums;
+using NaughtyAttributes;
 
 namespace ScriptableObjects.GameEvents
 {
@@ -9,6 +10,13 @@ namespace ScriptableObjects.GameEvents
     {
         public Action OnEventRaised;
         public void Raise()
+        {
+            OnEventRaised?.Invoke();
+        }
+        
+
+        [Button]
+        public void RaiseTest()
         {
             OnEventRaised?.Invoke();
         }

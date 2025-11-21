@@ -7,26 +7,34 @@ public class BallController : MonoBehaviour
     public float outsideRadius = 2f;
     public float insideRadius = 1.3f;
     public float moveTime = 0.2f;
-    public float angle;
-    public float speed = 360f;
 
-    bool isInside = false;
+    [Header("Rotation")]
+    public float speed = 360f;             
+    public float maxSpeed = 1200f;        
+    public float speedIncreaseRate = 0.5f; 
+
+    float angle;
     float radius;
+    bool isInside = false;
+
+    Tweener rotationTween;
 
     void Start()
     {
         radius = outsideRadius;
-
-        DOTween.To(() => angle,
-                x => angle = x,
-                360f,
-                360f/speed)
-            .SetEase(Ease.Linear)
-            .SetLoops(-1, LoopType.Incremental);
+        StartRotationTween();
     }
 
     void Update()
     {
+        // Increase speed
+        if (speed < maxSpeed)
+        {
+            speed += speedIncreaseRate * Time.deltaTime;
+            RestartRotationTween(); 
+        }
+
+       
         if (Input.GetMouseButtonDown(0))
         {
             isInside = !isInside;
@@ -36,12 +44,36 @@ public class BallController : MonoBehaviour
                     r => radius = r,
                     target,
                     moveTime)
-                .SetEase(Ease.OutCubic);
+                .SetEase(Ease.OutBack);
         }
 
         float rad = angle * Mathf.Deg2Rad;
 
         transform.position = center.position +
                              new Vector3(Mathf.Cos(rad), Mathf.Sin(rad), 0) * radius;
+    }
+
+
+
+    void StartRotationTween()
+    {
+        float duration = 360f / speed;
+
+        rotationTween = DOTween.To(
+                () => angle,
+                x => angle = x,
+                angle + 360f,
+                duration
+            )
+            .SetEase(Ease.Linear)
+            .SetLoops(-1, LoopType.Restart);  
+    }
+
+    void RestartRotationTween()
+    {
+        if (rotationTween != null)
+            rotationTween.Kill();
+
+        StartRotationTween();
     }
 }
