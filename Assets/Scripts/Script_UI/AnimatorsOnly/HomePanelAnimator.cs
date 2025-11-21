@@ -1,20 +1,22 @@
+using System;
 using UnityEngine;
 using DG.Tweening;
 using NaughtyAttributes;
+using ScriptableObjects.GameEvents;
 
 namespace UI
 {
     public class HomePanelAnimator : MonoBehaviour
     {
+        [SerializeField] private NullEvent OnStartGame;
         [Header("Refs")]
-        public RectTransform playerName;
-        public RectTransform gameName;
-        public RectTransform startButton;
+        [SerializeField] private RectTransform playerName;
+        [SerializeField] private RectTransform gameName;
+        [SerializeField] private RectTransform startButton;
 
         [Header("Settings")]
         public float moveDistance = 200f;
         public float moveDuration = 0.5f;
-        public float scaleDuration = 0.5f;
         public float flipRotation = 90f;
         
         private Vector2 playerNameOriginal;
@@ -32,6 +34,16 @@ namespace UI
             gameNameOriginal = gameName.anchoredPosition;
             startButtonOriginal = startButton.anchoredPosition;
             gameNameRotationOriginal = gameName.localRotation;
+        }
+
+        private void OnEnable()
+        {
+            OnStartGame.OnEventRaised += ReverseAnimations;
+            
+        }
+        private void OnDisable()
+        {
+            OnStartGame.OnEventRaised -= ReverseAnimations;
         }
 
         private void Start()

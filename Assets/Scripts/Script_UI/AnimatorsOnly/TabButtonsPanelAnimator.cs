@@ -1,11 +1,14 @@
+using System;
 using UnityEngine;
 using DG.Tweening;
 using NaughtyAttributes;
+using ScriptableObjects.GameEvents;
 
 namespace UI
 {
     public class TabButtonsPanelAnimator : MonoBehaviour
     {
+        [SerializeField] private NullEvent OnStartGameEvent;
         [Header("Refs")]
         public RectTransform targetPanel;
 
@@ -21,6 +24,15 @@ namespace UI
         private void Awake()
         {
             originalPos = targetPanel.anchoredPosition;
+        }
+
+        private void OnEnable()
+        {
+            OnStartGameEvent.OnEventRaised += ReverseAnimation;
+        }
+        private void OnDisable()
+        {
+            OnStartGameEvent.OnEventRaised += ReverseAnimation;
         }
 
         private void Start()

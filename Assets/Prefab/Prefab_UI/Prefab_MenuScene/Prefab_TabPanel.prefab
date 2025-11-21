@@ -73,6 +73,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 784f8ddf1e424a30a28aadb73c82cf7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnStartGameEvent: {fileID: 11400000, guid: 406da26460a67b2408862f1deb2fcea4, type: 2}
   targetPanel: {fileID: 5687337530833356144}
   moveDuration: 0.4
   moveOffsetY: -250

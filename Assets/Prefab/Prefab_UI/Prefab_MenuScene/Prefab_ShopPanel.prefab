@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2cfa8f3c26d4eb19aeecd454501b072, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tab: 1
-  onTabSelected: {fileID: 11400000, guid: fac8b9dcda561fd4e9bbcc2fc3eddede, type: 2}
+  tab: 0
+  onTabSelected: {fileID: 11400000, guid: 9a5580d30853fb049b2bcd0fcb16b4bf, type: 2}
   animDuration: 0.4
-  offscreenX: 1080
+  swipeThreshold: 50

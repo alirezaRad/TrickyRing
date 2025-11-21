@@ -188,12 +188,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05f11377303d4bc8b898d29962ee9dbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnStartGame: {fileID: 11400000, guid: 406da26460a67b2408862f1deb2fcea4, type: 2}
   playerName: {fileID: 8766278257900702579}
   gameName: {fileID: 669510542716161119}
   startButton: {fileID: 7039576471504191278}
   moveDistance: 800
   moveDuration: 1
-  scaleDuration: 1
   flipRotation: -90
 --- !u!114 &1646724229074731680
 MonoBehaviour:
@@ -209,6 +209,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerNameText: {fileID: 4131905706668331859}
   playerHighScoreText: {fileID: 649819654466008162}
+  startGameButton: {fileID: 3054698334067321639}
+  onStartGame: {fileID: 11400000, guid: 406da26460a67b2408862f1deb2fcea4, type: 2}
 --- !u!1 &2285429793465393963
 GameObject:
   m_ObjectHideFlags: 0

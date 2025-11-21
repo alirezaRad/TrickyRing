@@ -320,8 +320,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   namesFile: {fileID: 4900000, guid: 1de9d4849ec4abc4986100e9457e5dad, type: 3}
-  OnPanelSelected: {fileID: 11400000, guid: 1afe7ff9358539344bcb334e932868b6, type: 2}
+  OnLeaderBoardPanelSelected: {fileID: 11400000, guid: 1afe7ff9358539344bcb334e932868b6, type: 2}
   OnDataLoaded: {fileID: 11400000, guid: 0c75258ebafe2324da1904fcdef6046e, type: 2}
+  OnLoadingPanelShow: {fileID: 11400000, guid: a44ee1e4a1f6d0a43a7100756b70bd19, type: 2}
+  OnPanelSelected: {fileID: 11400000, guid: 9a5580d30853fb049b2bcd0fcb16b4bf, type: 2}
   players: []
   loadFrameCount: 15
   insertChunkSize: 500
@@ -338,6 +340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OnDataLoaded: {fileID: 11400000, guid: 0c75258ebafe2324da1904fcdef6046e, type: 2}
+  OnLeaderboardLoading: {fileID: 11400000, guid: a44ee1e4a1f6d0a43a7100756b70bd19, type: 2}
   content: {fileID: 3178220217189365333}
   scrollRect: {fileID: 7688488793948034852}
   itemPrefab: {fileID: 8321425908586297276, guid: 3fe8f9bdcd9be0b438a84a03bbb04547, type: 3}
@@ -550,8 +553,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 25}
-  m_SizeDelta: {x: 0, y: -50}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2151809745067852238
 CanvasRenderer:
@@ -717,8 +720,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -65}
-  m_SizeDelta: {x: 0, y: -30}
+  m_AnchoredPosition: {x: 0, y: -40}
+  m_SizeDelta: {x: 0, y: -80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2785925663130170187
 CanvasRenderer:
@@ -807,8 +810,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11a2e0a9df1f4b599b4e8872a13b6f53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnLeaderBoardTabClicked: {fileID: 11400000, guid: 1afe7ff9358539344bcb334e932868b6, type: 2}
+  OnLeaderBoardTabClicked: {fileID: 11400000, guid: a44ee1e4a1f6d0a43a7100756b70bd19, type: 2}
   OnLeaderBoardDataLoaded: {fileID: 11400000, guid: 0c75258ebafe2324da1904fcdef6046e, type: 2}
+  icon: {fileID: 3517118459351560174}
+  canvasGroup: {fileID: 9172501416852392425}
 --- !u!1 &2577330789658840695
 GameObject:
   m_ObjectHideFlags: 0
@@ -1092,7 +1097,6 @@ GameObject:
   - component: {fileID: 3517118459351560174}
   - component: {fileID: 5460220296596904869}
   - component: {fileID: 7784635225562703630}
-  - component: {fileID: 4637894333430743457}
   m_Layer: 5
   m_Name: 'Loading Icon '
   m_TagString: Untagged
@@ -1157,20 +1161,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &4637894333430743457
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3722595707575118154}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45b6e3c2d65941038df1a07a2a5ffcbc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationAmount: {x: 0, y: 0, z: 360}
-  duration: 0.5
 --- !u!1 &4775295012762130125
 GameObject:
   m_ObjectHideFlags: 0
@@ -1894,6 +1884,7 @@ GameObject:
   - component: {fileID: 1018799684034560966}
   - component: {fileID: 651843864598065648}
   - component: {fileID: 2077377714559079273}
+  - component: {fileID: 9172501416852392425}
   m_Layer: 5
   m_Name: LoadingBackGround
   m_TagString: Untagged
@@ -1959,6 +1950,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 0.3
+--- !u!225 &9172501416852392425
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7073877416025536069}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &8728960576223212425
 GameObject:
   m_ObjectHideFlags: 0
