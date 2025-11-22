@@ -1,12 +1,12 @@
 # ninja log v5
-58	407	7854453133039994	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	95517393e291c738
-408	553	7854453134263104	F:/TrickyRing/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/5i2b4h6l/obj/arm64-v8a/libswappywrapper.so	6d777878b2b7eccb
-20	1630	7854453145253858	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	9de0f6b31e4b8507
-34	1643	7854453145364692	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	37d1a6e8b5c3b392
-9	1648	7854453145448256	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	68dc7313d6b232fb
-42	1649	7854453145458426	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	2f711def5750f50
-14	1731	7854453146218668	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	2bfc427734b7b349
-49	1864	7854453147553579	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	981cdcdf35a63146
-28	1914	7854453148100263	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	c7ca7d787181462c
-1	2008	7854453149048041	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	138280fdec3f6adb
-2009	2105	7854453150024521	F:/TrickyRing/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/5i2b4h6l/obj/arm64-v8a/libgame.so	59880b67e39e365a
+62	541	7854964200392563	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	95517393e291c738
+543	703	7854964202141839	F:/TrickyRing/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/5i2b4h6l/obj/arm64-v8a/libswappywrapper.so	6d777878b2b7eccb
+31	2278	7854964217755712	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	37d1a6e8b5c3b392
+44	2286	7854964217785840	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	9de0f6b31e4b8507
+18	2316	7854964218146026	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	68dc7313d6b232fb
+49	2326	7854964218251048	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	2f711def5750f50
+25	2396	7854964218948593	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	2bfc427734b7b349
+36	2700	7854964221972995	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	c7ca7d787181462c
+1	2811	7854964223098130	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	138280fdec3f6adb
+54	2978	7854964224751085	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	981cdcdf35a63146
+2979	3163	7854964226675429	F:/TrickyRing/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/5i2b4h6l/obj/arm64-v8a/libgame.so	59880b67e39e365a
