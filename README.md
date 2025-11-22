@@ -8,8 +8,9 @@ The project emphasizes smooth gameplay, responsive UI, and an enjoyable user exp
 
 
 ---
-![Gameplay Preview](assets/gameplay.gif)
-![Gameplay Preview](assets/gameplay.gif)
+- [Landscape GIF](https://github.com/alirezaRad/TrickyRing/blob/main/Recordings/Movie_005.gif)
+- [Portrait GIF](https://github.com/alirezaRad/TrickyRing/blob/main/Recordings/Movie_006.gif)
+
 
 ## 🎮 Features
 
