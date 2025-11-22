@@ -1,32 +1,30 @@
-using System;
 using DG.Tweening;
-using NaughtyAttributes;
 using ScriptableObjects.GameEvents;
 using UnityEngine;
 using TMPro;
-using UnityEngine.Rendering;
+
 
 namespace UI
 { 
     public class GameSceneAnimationManager : MonoBehaviour
     {
-        public NullEvent OnBallStartMoving;
-        public NullEvent OnGameStart;
-        public NullEvent OnGameOver;
+        [SerializeField] private NullEvent OnBallStartMoving;
+        [SerializeField] private NullEvent OnGameStart;
+        [SerializeField] private NullEvent OnGameOver;
         
         [Header("UI References")]
-        public TextMeshProUGUI scoreText;
-        public TextMeshProUGUI highScoreText;
-        public TextMeshProUGUI playerNameText;
+        [SerializeField] private TextMeshProUGUI scoreText;
+        [SerializeField] private TextMeshProUGUI highScoreText;
+        [SerializeField] private TextMeshProUGUI playerNameText;
 
         [Header("Game Objects")]
-        public GameObject ball;
-        public GameObject ring;
+        [SerializeField] private GameObject ball;
+        [SerializeField] private GameObject ring;
 
         [Header("Animation Settings")]
-        public float moveDuration = 0.6f;
-        public float scaleDuration = 0.6f;
-        public float staggerDelay = 0.1f;
+        [SerializeField] private float moveDuration = 0.6f;
+        [SerializeField] private float scaleDuration = 0.6f;
+        [SerializeField] private float staggerDelay = 0.1f;
 
         private Vector3 ballStartPos;
         private Vector3 ringStartScale;
@@ -49,7 +47,13 @@ namespace UI
             OnGameOver.OnEventRaised += PlayEndAnimation;
             OnGameStart.OnEventRaised += HandleGameStart;
         }
-
+        
+        private void OnDisable()
+        {
+            OnGameOver.OnEventRaised -= PlayEndAnimation;
+            OnGameStart.OnEventRaised -= HandleGameStart;
+        }
+        
         public void Start()
         {
             PlayStartAnimation();
@@ -65,30 +69,28 @@ namespace UI
 
         public void PlayStartAnimation()
         {
-            if (scoreText != null) scoreText.transform.position = scoreTextStartPos + Vector3.left * 800;
-            if (highScoreText != null) highScoreText.transform.position = highScoreTextStartPos + Vector3.left * 800;
-            if (playerNameText != null) playerNameText.transform.position = playerNameStartPos + Vector3.left * 800;
-            if (ball != null) ball.transform.position = ballStartPos + Vector3.right * 10 ;
-            if (ring != null) ring.transform.localScale = Vector3.zero;
+            if (scoreText) scoreText.transform.position = scoreTextStartPos + Vector3.left * 800;
+            if (highScoreText) highScoreText.transform.position = highScoreTextStartPos + Vector3.left * 800;
+            if (playerNameText) playerNameText.transform.position = playerNameStartPos + Vector3.left * 800;
+            if (ball) ball.transform.position = ballStartPos + Vector3.right * 10 ;
+            if (ring) ring.transform.localScale = Vector3.zero;
 
             Sequence startSeq = DOTween.Sequence();
 
             
-            if (playerNameText != null)
+            if (playerNameText)
                 startSeq.Append(playerNameText.transform.DOMoveX(playerNameStartPos.x, moveDuration).SetEase(Ease.OutBack));
-
-
             
-            if (ball != null)
+            if (ball)
                 startSeq.Join(ball.transform.DOMoveX(ballStartPos.x, moveDuration*4f).SetEase(Ease.InBack));
 
-            if (scoreText != null)
+            if (scoreText)
                 startSeq.Join(scoreText.transform.DOMoveX(scoreTextStartPos.x, moveDuration).SetEase(Ease.OutBack).SetDelay(0.1f));
             
-            if (highScoreText != null)
+            if (highScoreText)
                 startSeq.Join(highScoreText.transform.DOMoveX(highScoreTextStartPos.x, moveDuration).SetEase(Ease.OutBack).SetDelay(0.1f));
             
-            if (ring != null)
+            if (ring)
             {
                 startSeq.Join(ring.transform.DOScale(ringStartScale, scaleDuration * 1.5f).SetDelay(0.5f));
             }
@@ -108,16 +110,16 @@ namespace UI
 
             endSeq.AppendInterval(1f);
             
-            if (ring != null)
+            if (ring)
                 endSeq.Append(ring.transform.DOScale(Vector3.zero, scaleDuration).SetEase(Ease.InBack));
             
-            if (scoreText != null)
+            if (scoreText)
                 endSeq.Join(scoreText.transform.DOMoveX(scoreTextStartPos.x - 800, moveDuration).SetEase(Ease.InBack));
 
-            if (highScoreText != null)
+            if (highScoreText)
                 endSeq.Join(highScoreText.transform.DOMoveX(highScoreTextStartPos.x - 800, moveDuration).SetEase(Ease.InBack));
 
-            if (playerNameText != null)
+            if (playerNameText)
                 endSeq.Join(playerNameText.transform.DOMoveX(playerNameStartPos.x - 800, moveDuration).SetEase(Ease.InBack));
 
             endSeq.Play();

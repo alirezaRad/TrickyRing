@@ -188,6 +188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05f11377303d4bc8b898d29962ee9dbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  backgroundImage: {fileID: 3742130516976940104}
   OnSceneMenuAnimationEnd: {fileID: 11400000, guid: 37fb5f7219618e941805bdd1f82811e0, type: 2}
   OnStartGame: {fileID: 11400000, guid: 406da26460a67b2408862f1deb2fcea4, type: 2}
   playerName: {fileID: 8766278257900702579}

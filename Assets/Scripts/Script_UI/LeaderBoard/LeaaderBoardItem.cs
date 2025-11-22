@@ -1,9 +1,9 @@
+using ScriptableObjects.Services;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace UI.LeaderBoard
+namespace UI
 {
     public class LeaderBoardItem : MonoBehaviour
     {

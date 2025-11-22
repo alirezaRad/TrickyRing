@@ -1,10 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using DataStructure;
 using ScriptableObjects.GameEvents;
 
-namespace UI.LeaderBoard
+namespace UI
 {
     public class LeaderboardUIManager : MonoBehaviour
     {

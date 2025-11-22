@@ -3,7 +3,6 @@ using UnityEngine.UI;
 using DG.Tweening;
 using Enums;
 using ScriptableObjects.GameEvents;
-using UnityEngine.Serialization;
 
 namespace UI
 {

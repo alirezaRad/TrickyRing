@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections;
-namespace UI.Share
+namespace UI
 {
     public class ShareManager : MonoBehaviour
     {
@@ -26,7 +26,7 @@ namespace UI.Share
                 .AddFile(screenshotPath)
                 .SetSubject("Check my score!")
                 .SetText("My new high score in the game!")
-                .Share();   // this opens share panel
+                .Share();
         }
     }
 

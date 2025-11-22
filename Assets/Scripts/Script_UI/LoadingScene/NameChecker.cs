@@ -1,11 +1,9 @@
-
-using System;
 using UnityEngine;
 using DG.Tweening;
-using NaughtyAttributes;
 using ScriptableObjects.GameEvents;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using ScriptableObjects.Services;
 using TMPro;
 using UnityEngine.UI;
 

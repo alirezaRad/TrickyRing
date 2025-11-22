@@ -1,6 +1,6 @@
 using Enums;
 
-namespace Script_ScriptableObjects.UIConfigs
+namespace ScriptableObjects.UIConfigs
 {
     using UnityEngine;
 

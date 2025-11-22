@@ -1,9 +1,8 @@
-using System;
 using ScriptableObjects.GameEvents;
 using UnityEngine;
 using DG.Tweening;
 
-namespace UI.LeaderBoard
+namespace UI
 {
     public class LeadeerBoardLoading : MonoBehaviour
     {
@@ -39,10 +38,11 @@ namespace UI.LeaderBoard
             icon.localScale = Vector3.one * 0.8f;
             icon.DOScale(1f, 0.3f).SetEase(Ease.OutBack);
 
-
-            icon.DORotate(new Vector3(0, 0, -360), 0.5f, RotateMode.FastBeyond360)
+            
+            icon.DORotate(new Vector3(0, 0, -360), 1f, RotateMode.FastBeyond360)
                 .SetLoops(-1)
                 .SetEase(Ease.Linear);
+
         }
 
         public void HideLoading()

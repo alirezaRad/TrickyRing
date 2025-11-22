@@ -1,7 +1,7 @@
 using UnityEngine;
 using DG.Tweening;
 using Enums;
-using Script_ScriptableObjects.UIConfigs;
+using ScriptableObjects.UIConfigs;
 using ScriptableObjects.GameEvents;
 using UnityEngine.EventSystems;
 
@@ -47,7 +47,7 @@ namespace UI
         }
         
         private RectTransform rect;
-        private static int activeIndex = 0; 
+        private static int activeIndex; 
 
         private Vector2 originalPos;
 
@@ -58,7 +58,7 @@ namespace UI
             activeIndex = (int)panelSequence.firstActiveTab;
 
             originalPos = rect.anchoredPosition;
-            offscreenX = Screen.width;
+            offscreenX = Mathf.Max(Screen.width,2000f);
         }
 
         void OnEnable()

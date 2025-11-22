@@ -1,6 +1,7 @@
+using UnityEngine;
+
 namespace GameCore
 {
-    using UnityEngine;
 
     public class GameVisualScaleOnLandscape : MonoBehaviour
     {

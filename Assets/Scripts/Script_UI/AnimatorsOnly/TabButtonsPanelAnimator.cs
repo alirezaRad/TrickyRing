@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using DG.Tweening;
 using NaughtyAttributes;
@@ -10,13 +9,13 @@ namespace UI
     {
         [SerializeField] private NullEvent OnStartGameEvent;
         [Header("Refs")]
-        public RectTransform targetPanel;
+        [SerializeField] private RectTransform targetPanel;
 
         [Header("Settings")]
-        public float moveDuration = 0.4f;
+        [SerializeField] private float moveDuration = 0.4f;
 
         [Header("Animation Offset")]
-        public float moveOffsetY = -150f;
+        [SerializeField] private float moveOffsetY = -150f;
 
         private Vector2 originalPos;
         private Sequence panelSeq;
@@ -32,7 +31,7 @@ namespace UI
         }
         private void OnDisable()
         {
-            OnStartGameEvent.OnEventRaised += ReverseAnimation;
+            OnStartGameEvent.OnEventRaised -= ReverseAnimation;
         }
 
         private void Start()

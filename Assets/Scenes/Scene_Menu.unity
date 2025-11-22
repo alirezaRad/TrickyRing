@@ -124,17 +124,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5119794693625219189, guid: 72675503d05941e44a87038322da5a7b, type: 3}
   m_PrefabInstance: {fileID: 4717216396944796227}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &496372069 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3742130516976940104, guid: 72675503d05941e44a87038322da5a7b, type: 3}
-  m_PrefabInstance: {fileID: 4717216396944796227}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &796807200
 GameObject:
   m_ObjectHideFlags: 0
@@ -746,10 +735,6 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 732363543816078724, guid: 72675503d05941e44a87038322da5a7b, type: 3}
-      propertyPath: backgroundImage
-      value: 
-      objectReference: {fileID: 496372069}
     - target: {fileID: 1584356908118537005, guid: 72675503d05941e44a87038322da5a7b, type: 3}
       propertyPath: m_Name
       value: HomePanel

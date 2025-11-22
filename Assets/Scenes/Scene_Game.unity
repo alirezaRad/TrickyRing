@@ -1113,33 +1113,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6596541332438800492, guid: 7def8176acab13a44a6e0cb4be90725b, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6596541332438800492, guid: 7def8176acab13a44a6e0cb4be90725b, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7184433992705237812, guid: 7def8176acab13a44a6e0cb4be90725b, type: 3}
       propertyPath: m_Name
       value: GameUi
-      objectReference: {fileID: 0}
-    - target: {fileID: 7521898339888316521, guid: 7def8176acab13a44a6e0cb4be90725b, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7521898339888316521, guid: 7def8176acab13a44a6e0cb4be90725b, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8090854113065590811, guid: 7def8176acab13a44a6e0cb4be90725b, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8090854113065590811, guid: 7def8176acab13a44a6e0cb4be90725b, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

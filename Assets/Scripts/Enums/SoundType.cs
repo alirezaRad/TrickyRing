@@ -8,7 +8,6 @@ namespace Enums
         UIMove,
         Score,
         HighScore,
-
         GameSceneMusic,
         MenuSceneMusic
     }

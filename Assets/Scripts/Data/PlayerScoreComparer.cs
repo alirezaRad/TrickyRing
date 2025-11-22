@@ -10,5 +10,4 @@ namespace Data
             return b.score.CompareTo(a.score);  
         }
     }
-
 }

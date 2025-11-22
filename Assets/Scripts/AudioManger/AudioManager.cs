@@ -97,23 +97,23 @@ namespace AudioManger
                     break;
             }
         }
-
-
         
-
-
-        public void FadeMusicTo(SoundType type, float duration = 1f)
+        private void FadeMusicTo(SoundType type, float duration = 1f)
         {
             if (!clipMap.ContainsKey(type)) return;
-            
+
             if (musicSource.isPlaying && musicSource.clip == clipMap[type])
                 return;
-            
+
             if (fadeRoutine != null)
+            {
                 StopCoroutine(fadeRoutine);
+                musicSource.volume = 1f; 
+            }
 
             fadeRoutine = StartCoroutine(FadeRoutine(type, duration));
         }
+
 
         private IEnumerator FadeRoutine(SoundType type, float duration)
         {
@@ -141,8 +141,6 @@ namespace AudioManger
 
             fadeRoutine = null;
         }
-
-        
     }
 
     [Serializable]

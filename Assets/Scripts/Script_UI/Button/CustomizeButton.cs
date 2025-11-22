@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -36,15 +35,6 @@ namespace UI
             if (buttonText != null)
                 buttonText.localPosition = originalTextPos;
         }
-
-        public override void OnPointerExit(PointerEventData eventData)
-        {
-            base.OnPointerExit(eventData);
-            if (buttonText != null)
-                buttonText.localPosition = originalTextPos;
-        }
-
-
 
         public  void ActivateInteractableAfterDelay()
         {

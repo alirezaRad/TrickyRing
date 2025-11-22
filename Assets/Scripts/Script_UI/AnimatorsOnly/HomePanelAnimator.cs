@@ -1,7 +1,5 @@
-using System;
 using UnityEngine;
 using DG.Tweening;
-using Enums;
 using NaughtyAttributes;
 using ScriptableObjects.GameEvents;
 using UnityEngine.UI;
@@ -19,9 +17,9 @@ namespace UI
         [SerializeField] private RectTransform startButton;
 
         [Header("Settings")]
-        public float moveDistance = 200f;
-        public float moveDuration = 0.5f;
-        public float flipRotation = 90f;
+        [SerializeField] private float moveDistance = 200f;
+        [SerializeField] private float moveDuration = 0.5f;
+        [SerializeField] private float flipRotation = 90f;
         
         private Vector2 playerNameOriginal;
         private Vector2 gameNameOriginal;

@@ -5,7 +5,7 @@ using Random = UnityEngine.Random;
 using Enums;
 using ScriptableObjects.GameEvents;
 using DataStructure;
-using UnityEngine.Serialization;
+using ScriptableObjects.Services;
 
 
 namespace Data
@@ -21,6 +21,7 @@ namespace Data
         [SerializeField] private IntEvent OnPanelSelected;
 
         public List<PlayerInfo> players;
+        
         [SerializeField] private int loadFrameCount = 1;
         [SerializeField] private int insertChunkSize = 5000;
         private bool _isLoading;
@@ -48,7 +49,7 @@ namespace Data
         private void OnDisable()
         {
             OnLeaderBoardPanelSelected.OnEventRaised -= CheckForLoad;
-            OnPanelSelected.OnEventRaised += CheckForFirstShow;
+            OnPanelSelected.OnEventRaised -= CheckForFirstShow;
         }
 
         private void CheckForLoad(int tabType)
@@ -57,6 +58,7 @@ namespace Data
             if (_isLoading) return;
             
             OnLoadingPanelShow.Raise();
+            
             _loadingTab = (LeaderBoardTabType)tabType;
             if(loadingCoroutine!=null) StopCoroutine(loadingCoroutine);
             if(insertCoroutine!=null) StopCoroutine(insertCoroutine);

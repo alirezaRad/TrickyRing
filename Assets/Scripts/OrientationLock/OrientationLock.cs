@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace UI.LandScapeAndPortraitSetter
+namespace OrientationLock
 {
     
     public class OrientationLock : MonoBehaviour
