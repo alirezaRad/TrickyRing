@@ -56,7 +56,7 @@ namespace UI
 
         private void GoHome()
         {
-            PlayHideAnimation(() => { SceneManager.LoadScene("Scene_Menu");}
+            PlayHideAnimation(() => { SceneManager.LoadSceneAsync("Scene_Menu");}
                 );
         }
 

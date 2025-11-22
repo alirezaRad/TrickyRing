@@ -35,7 +35,7 @@ namespace UI
 
         private void NextScene()
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1,LoadSceneMode.Additive);
+            SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1,LoadSceneMode.Additive);
         }
 
         private void StartGame()
