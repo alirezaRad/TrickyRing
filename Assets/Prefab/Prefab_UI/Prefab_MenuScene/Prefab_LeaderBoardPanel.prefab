@@ -1302,7 +1302,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 04c4ec509a8035d4a9294060f4817f4c, type: 2}
+      - m_Target: {fileID: 11400000, guid: 37f852b3d1f439849927d92a834b1a8f, type: 2}
         m_TargetAssemblyTypeName: ScriptableObjects.GameEvents.NullEvent, Assembly-CSharp
         m_MethodName: Raise
         m_Mode: 1
@@ -1455,7 +1455,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 04c4ec509a8035d4a9294060f4817f4c, type: 2}
+      - m_Target: {fileID: 11400000, guid: 37f852b3d1f439849927d92a834b1a8f, type: 2}
         m_TargetAssemblyTypeName: ScriptableObjects.GameEvents.NullEvent, Assembly-CSharp
         m_MethodName: Raise
         m_Mode: 1
@@ -1897,7 +1897,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 04c4ec509a8035d4a9294060f4817f4c, type: 2}
+      - m_Target: {fileID: 11400000, guid: 37f852b3d1f439849927d92a834b1a8f, type: 2}
         m_TargetAssemblyTypeName: ScriptableObjects.GameEvents.NullEvent, Assembly-CSharp
         m_MethodName: Raise
         m_Mode: 1

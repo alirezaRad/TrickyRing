@@ -10,5 +10,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b5659c75cc84bc0ad117a1b7e9118eb, type: 3}
-  m_Name: StartMovingBall
+  m_Name: OnButtonClickEvent
   m_EditorClassIdentifier: 

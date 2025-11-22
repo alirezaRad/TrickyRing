@@ -44,7 +44,7 @@ public class BallController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         _firstColor = spriteRenderer.color;
         _firstLocalScale = transform.localScale;
-        radius = outsideRadius;
+        radius = outsideRadius* transform.parent.localScale.x;
     }
 
     private void OnEnable()
@@ -79,7 +79,7 @@ public class BallController : MonoBehaviour
         {
             AudioManger.AudioManager.Instance.PlaySFX(SoundType.Move);
             isInside = !isInside;
-            float target = isInside ? insideRadius : outsideRadius;
+            float target = isInside ? insideRadius * transform.parent.localScale.x : outsideRadius* transform.parent.localScale.x;
             DOTween.To(() => radius, r => radius = r, target, moveTime)
                    .SetEase(Ease.OutBack);
         }
@@ -130,7 +130,7 @@ public class BallController : MonoBehaviour
                 spriteRenderer.color = _firstColor;
             
             angle = 0f;
-            radius = outsideRadius;
+            radius = outsideRadius* transform.parent.localScale.x;
             transform.localScale = _firstLocalScale;
             isInside = false;
             canMove = false;

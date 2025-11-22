@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using Enums;
@@ -23,10 +24,10 @@ namespace AudioManger
         [SerializeField] private List<SoundClip> soundClips;
 
         private Dictionary<SoundType, AudioClip> clipMap;
+        private Coroutine fadeRoutine;
 
         private void Awake()
         {
-
             if (Instance != null && Instance != this)
             {
                 Destroy(gameObject);
@@ -36,19 +37,25 @@ namespace AudioManger
             Instance = this;
             DontDestroyOnLoad(gameObject);
 
-
             clipMap = new Dictionary<SoundType, AudioClip>();
+    
             foreach (var s in soundClips)
+            {
                 clipMap[s.type] = s.clip;
+                
+                if (s.clip != null && !s.clip.preloadAudioData)
+                {
+                    s.clip.LoadAudioData();
+                }
+            }
         }
+
 
         private void OnEnable()
         {
 
             playButtonSoundEvent.OnEventRaised += PlayButtonSound;
             playUiMoveSound.OnEventRaised += PlayMoveUISound;
-
-
             SceneManager.sceneLoaded += OnSceneLoaded;
         }
 
@@ -57,8 +64,6 @@ namespace AudioManger
 
             playButtonSoundEvent.OnEventRaised -= PlayButtonSound;
             playUiMoveSound.OnEventRaised -= PlayMoveUISound;
-
-
             SceneManager.sceneLoaded -= OnSceneLoaded;
         }
 
@@ -100,38 +105,44 @@ namespace AudioManger
         public void FadeMusicTo(SoundType type, float duration = 1f)
         {
             if (!clipMap.ContainsKey(type)) return;
-
-
+            
             if (musicSource.isPlaying && musicSource.clip == clipMap[type])
                 return;
+            
+            if (fadeRoutine != null)
+                StopCoroutine(fadeRoutine);
 
-            StartCoroutine(FadeMusicCoroutine(type, duration));
+            fadeRoutine = StartCoroutine(FadeRoutine(type, duration));
         }
 
-
-        private System.Collections.IEnumerator FadeMusicCoroutine(SoundType type, float duration)
+        private IEnumerator FadeRoutine(SoundType type, float duration)
         {
-            float startVolume = musicSource.volume;
+            float initialVolume = musicSource.volume;
+            AudioClip nextClip = clipMap[type];
             
             float t = 0f;
             while (t < duration)
             {
                 t += Time.deltaTime;
-                musicSource.volume = Mathf.Lerp(startVolume, 0f, t / duration);
+                musicSource.volume = initialVolume * (1f - t / duration);
                 yield return null;
             }
-            
-            musicSource.clip = clipMap[type];
+
+            musicSource.clip = nextClip;
             musicSource.Play();
             
             t = 0f;
             while (t < duration)
             {
                 t += Time.deltaTime;
-                musicSource.volume = Mathf.Lerp(0f, startVolume, t / duration);
+                musicSource.volume = (t / duration) * initialVolume;
                 yield return null;
             }
+
+            fadeRoutine = null;
         }
+
+        
     }
 
     [Serializable]

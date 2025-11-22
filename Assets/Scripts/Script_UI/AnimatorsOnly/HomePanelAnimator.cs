@@ -4,11 +4,13 @@ using DG.Tweening;
 using Enums;
 using NaughtyAttributes;
 using ScriptableObjects.GameEvents;
+using UnityEngine.UI;
 
 namespace UI
 {
     public class HomePanelAnimator : MonoBehaviour
     {
+        [SerializeField] private Image backgroundImage;
         [SerializeField] private NullEvent OnSceneMenuAnimationEnd;
         [SerializeField] private NullEvent OnStartGame;
         [Header("Refs")]
@@ -107,7 +109,7 @@ namespace UI
         [Button]
         public void PlayExitAnimation()
         {
-            AudioManger.AudioManager.Instance.FadeMusicTo(SoundType.GameSceneMusic);
+            backgroundImage.enabled = false;
 
             if (exitSequence != null && exitSequence.IsActive())
                 exitSequence.Kill();

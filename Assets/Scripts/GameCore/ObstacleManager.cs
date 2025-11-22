@@ -157,7 +157,7 @@ public class ObstacleManager : MonoBehaviour
     {
         int attempts = 0;
         Vector3 pos = Vector3.zero;
-        float radius = Random.value > 0.5f ? insideRadius : outsideRadius;
+        float radius = Random.value > 0.5f ? insideRadius * transform.parent.localScale.x : outsideRadius* transform.parent.localScale.x;
 
         while (attempts < 50)
         {
